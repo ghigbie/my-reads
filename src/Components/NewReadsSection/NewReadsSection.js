@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './NewReadsSection.css';
 
 class NewReadsSection extends Component{
     render(){

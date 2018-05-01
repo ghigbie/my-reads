@@ -23,7 +23,7 @@ class MyReadsApp extends Component {
         <div>
           <Header title={this.title}
                   subtitle={this.subtitle}/>
-          <ReadsSection className="container"
+          <ReadsSection className="custom-container"
                         sectionTitles={this.sectionTitles}/>
           <Footer footerText={this.footerText}/>
       </div>
