@@ -12,3 +12,5 @@ class NewReadsSection extends Component{
     }
 }
 
+export default NewReadsSection;
+

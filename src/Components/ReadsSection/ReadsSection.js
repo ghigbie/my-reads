@@ -10,7 +10,7 @@ const ReadsSection = (props) => {
     return(
         <div className="container">
             <h2>Reads Section</h2>
-            <ReadsSubsection />
+            <ReadsSubsection title="test"/>
         </div>
     );
 };
