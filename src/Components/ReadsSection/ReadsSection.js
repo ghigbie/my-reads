@@ -1,7 +1,7 @@
 import React from 'react';
 import './ReadsSection.css';
 
-import ReadsSubjection from './../Components/ReadsSubsection';
+import ReadsSubsection from './../Components/ReadsSubsection/ReadSubsection';
 import CurrentlyReading from './../CurrentlyReading/CurrentlyReading';
 import WantToRead from './../WantToRead/WantToRead';
 import Read from './../Read/Read';
