@@ -7,6 +7,10 @@ import ReadsSection from './Components/ReadsSection/ReadsSection';
 import Footer from './Components/Footer/Footer';
 
 class MyReadsApp extends Component {
+  
+  title = 'MyReads';
+  subtitle = 'The book tracker...';
+  
   render() {
     return (
       <div className="App">
