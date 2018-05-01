@@ -6,7 +6,8 @@ class Read extends Component{
     render(){
         return(
             <div>
-                <h3>Read</h3>
+                <h4>Read</h4>
+                <hr />
             </div>
         );
     }

@@ -6,7 +6,8 @@ class WantToRead extends Component{
     render(){
         return(
             <div>
-                <h3>Want to Read</h3>
+                <h4>Want to Read</h4>
+                <hr />
             </div>
         );
     }

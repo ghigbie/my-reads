@@ -6,7 +6,8 @@ class CurrentlyReading extends Component{
     render(){
         return(
             <div>
-                <h3>CurrentlyReading</h3>
+                <h4>CurrentlyReading</h4>
+                <hr />
             </div>
         );
     }
