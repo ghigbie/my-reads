@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './MyReadsApp.css';
 
 import Header from './Components/Header/Header';
-import MainSection from './Components/ReadsSection/ReadsSection';
+import MainContent from './Components/MainContent/MainContent';
 import Footer from './Components/Footer/Footer';
 
 class MyReadsApp extends Component {
@@ -22,7 +22,7 @@ class MyReadsApp extends Component {
         <div>
           <Header title={this.title}
                   subtitle={this.subtitle}/>
-          <MainSection sectionTitles={this.sectionTitles}/>
+          <MainContent sectionTitles={this.sectionTitles}/>
           <Footer footerText={this.footerText}/>
       </div>
     );

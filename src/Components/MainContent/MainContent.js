@@ -3,7 +3,7 @@ import './MainSection.css';
 
 import BookRow from './../Components/BookRow/BookRow';
 
-const MainSection = (props) => {
+const MainContent= (props) => {
     return(
         <div className="custom-container">
             <h2>Reads Section</h2>
@@ -12,4 +12,4 @@ const MainSection = (props) => {
     );
 };
 
-export default MainSection;
+export default MainContent;
