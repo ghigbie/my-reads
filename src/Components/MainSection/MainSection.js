@@ -5,7 +5,7 @@ import BookRow from './../Components/BookRow/BookRow';
 
 const MainSection = (props) => {
     return(
-        <div className="container">
+        <div className="custom-container">
             <h2>Reads Section</h2>
             <BookRow title="test"/>
         </div>
