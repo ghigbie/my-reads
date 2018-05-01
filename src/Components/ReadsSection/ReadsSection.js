@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CurrentlyReading from './../CurrentlyReading';
-import WantToRead from './../WantToRead';
-import Read from './../Read';
+import CurrentlyReading from './../CurrentlyReading/CurrentlyReading';
+import WantToRead from './../WantToRead/WantToRead';
+import Read from './../Read/Read';
 
 const ReadsSection = (props) => {
     return(
