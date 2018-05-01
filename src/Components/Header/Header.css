@@ -1,0 +1,36 @@
+#header-background{
+    background:#222;
+    border: none;
+    margin-bottom: 0;
+}
+
+#title{
+    padding-top: 4.5%;
+    color: #009076;
+    font-size: 3.5em;
+    text-decoration: none;
+}
+
+#subtitle{
+    padding-top: 1%;
+    padding-bottom: 5%;
+    color: #009076;
+    font-size: 2.5em;
+    text-decoration: none;
+}
+
+#logo{
+    width: 100%;
+    height: auto;
+}
+
+#navigation-bar{
+    background: #e3e8e8;
+    color: #009076;
+    font-size: 1em;
+    border: none;
+}
+
+.extra-margin{
+    margin-bottom: 2%;
+}
