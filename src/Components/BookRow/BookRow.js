@@ -11,7 +11,7 @@ class BookRow extends Component{
                 </div>
             </div>
         );
-    };
+    }
 }
 
 export default BookRow;

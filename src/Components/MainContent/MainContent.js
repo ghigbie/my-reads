@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainContent.css';
 
-import BookRow from './../Components/BookRow/BookRow';
+import BookRow from './../BookRow/BookRow';
 
 const MainContent= (props) => {
     return(
