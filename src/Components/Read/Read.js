@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import BookItem from './../BookItem/BookItem';
+
 class Read extends Component{
     render(){
         return(
