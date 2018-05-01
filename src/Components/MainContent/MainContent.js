@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainSection.css';
+import './MainContent.css';
 
 import BookRow from './../Components/BookRow/BookRow';
 
