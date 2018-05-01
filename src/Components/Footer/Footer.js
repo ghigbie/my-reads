@@ -5,7 +5,7 @@ const Footer = () => {
     return(
         <div className="footer">
                 <div className="container-fluid">
-                   <p>The best way to organize your reading endevors...</p>
+                   <h5>The best way to organize your reading endevors...</h5>
                 </div>
         </div>
     );

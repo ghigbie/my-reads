@@ -10,15 +10,15 @@ class MyReadsApp extends Component {
   
   title = 'MyReads';
   subtitle = 'The world\'s most okayist book tracker...';
+  footerText = 'The best way to organize your reading endevors...';
   
   render() {
     return (
         <div>
           <Header title={this.title}
                   subtitle={this.subtitle}/>
-                  
           <ReadsSection className="container" />
-          <Footer />
+          <Footer footerText={this.footerText}/>
       </div>
     );
   }
