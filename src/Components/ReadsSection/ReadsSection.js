@@ -1,18 +1,15 @@
 import React from 'react';
-import './ReadsSection.css';
+import './MainSection.css';
 
-import ReadsSubsection from './../Components/ReadsSubsection/ReadsSubsection';
-import CurrentlyReading from './../CurrentlyReading/CurrentlyReading';
-import WantToRead from './../WantToRead/WantToRead';
-import Read from './../Read/Read';
+import BookRow from './../Components/BookRow/BookRow';
 
-const ReadsSection = (props) => {
+const MainSection = (props) => {
     return(
         <div className="container">
             <h2>Reads Section</h2>
-            <ReadsSubsection title="test"/>
+            <BookRow title="test"/>
         </div>
     );
 };
 
-export default ReadsSection;
+export default MainSection;
