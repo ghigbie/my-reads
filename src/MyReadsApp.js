@@ -8,6 +8,10 @@ import Footer from './Components/Footer/Footer';
 
 class MyReadsApp extends Component {
   
+  state = {
+    books: []
+  }
+  
   title = 'MyReads';
   subtitle = 'The world\'s most okayist book tracker...';
   footerText = 'The best way to organize your reading endevors...';
