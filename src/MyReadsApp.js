@@ -9,7 +9,7 @@ import Footer from './Components/Footer/Footer';
 class MyReadsApp extends Component {
   
   title = 'MyReads';
-  subtitle = 'The book tracker...';
+  subtitle = 'The world\'s most okayist book tracker...';
   
   render() {
     return (

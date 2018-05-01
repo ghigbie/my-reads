@@ -6,7 +6,7 @@ import Read from './../Read/Read';
 
 const ReadsSection = (props) => {
     return(
-        <div>
+        <div className="container">
             <h2>Reads Section</h2>
             <CurrentlyReading />
             <WantToRead />

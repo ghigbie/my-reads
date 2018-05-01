@@ -5,8 +5,8 @@ const Header = (props) => {
     return(
         <div id="header-background">
             <div className="container">
-                <h2 id="title">{props.title}</h2>
-                <h4 id="subtitle">{props.subtitle}</h4>
+                <h3 id="title">{props.title}</h3>
+                <h5 id="subtitle">{props.subtitle}</h5>
             </div>
         </div>
     );
