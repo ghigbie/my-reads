@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './MyReadsApp.css';
 
 import Header from './Components/Header/Header';
