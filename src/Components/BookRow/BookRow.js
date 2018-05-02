@@ -6,7 +6,6 @@ class BookRow extends Component{
         return(
             <div>
                 <h4 className="book-title">{this.props.title}</h4>
-                <hr />
                 <div className="books-container">
                 
                 </div>
