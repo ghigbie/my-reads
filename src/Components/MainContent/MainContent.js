@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MainContent.css';
 
 import BookRow from './../BookRow/BookRow';
@@ -11,6 +12,11 @@ const MainContent= (props) => {
             })}
         </div>
     );
+};
+
+MainContent.PropTypes = {
+    sectionTitles: PropTypes.array.isRequired,
+    books: PropTypes.array.isRequired
 };
 
 export default MainContent;
