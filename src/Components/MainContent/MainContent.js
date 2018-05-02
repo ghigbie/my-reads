@@ -6,8 +6,9 @@ import BookRow from './../BookRow/BookRow';
 const MainContent= (props) => {
     return(
         <div className="custom-container">
-            <h2>Reads Section</h2>
-            <BookRow title="test"/>
+            {props.sectionTitles.map((title, index) => {
+                return (<BookRow key={index} title={title} />);
+            })}
         </div>
     );
 };

@@ -22,7 +22,8 @@ class MyReadsApp extends Component {
         <div>
           <Header title={this.title}
                   subtitle={this.subtitle}/>
-          <MainContent sectionTitles={this.sectionTitles}/>
+          <MainContent sectionTitles={this.sectionTitles}
+                       books={this.state.books}/>
           <Footer footerText={this.footerText}/>
       </div>
     );
