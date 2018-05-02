@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import * as BookAPI from 'BookAPI';
 import './MyReadsApp.css';
+
 import Header from './Components/Header/Header';
 import MainContent from './Components/MainContent/MainContent';
 import Footer from './Components/Footer/Footer';
@@ -14,6 +16,10 @@ class MyReadsApp extends Component {
   subtitle = 'The world\'s most okayist book tracker...';
   footerText = 'The best way to organize your reading endevors...';
   sectionTitles = ['Currently Reading', 'Want To Read', 'Read'];
+  
+  componentDidMount(){
+    
+  }
   
   render() {
     return (
