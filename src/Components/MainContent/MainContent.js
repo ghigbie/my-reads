@@ -14,7 +14,7 @@ const MainContent= (props) => {
     );
 };
 
-MainContent.PropTypes = {
+MainContent.propTypes = {
     sectionTitles: PropTypes.array.isRequired,
     books: PropTypes.array.isRequired
 };

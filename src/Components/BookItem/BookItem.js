@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookItem = (props) => {
     return(
@@ -11,6 +12,10 @@ const BookItem = (props) => {
             </div>
         </div>
     );
+};
+
+BookItem.PropTypes = {
+    title: PropTypes.string.isRequired
 };
 
 export default BookItem;
