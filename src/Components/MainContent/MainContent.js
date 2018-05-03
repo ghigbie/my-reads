@@ -10,7 +10,7 @@ const MainContent= (props) => {
             {props.sectionTitles.map((title, index) => {
                 return (<BookRow key={index} 
                                  heading={title.heading}
-                                 sectionTitles={props.sectionTitles}
+                                 shelfCategory={title.shelfCategory}
                                  books={props.books}/>);
             })}
         </div>

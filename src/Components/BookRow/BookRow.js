@@ -8,6 +8,7 @@ class BookRow extends Component{
     static propTypes = {
         sectionTitles: PropTypes.array.isRequired,
         heading: PropTypes.string.isRequired,
+        shelfCategory: PropTypes.string.isRequired,
         books: PropTypes.array.isRequired
     }
     
@@ -16,8 +17,9 @@ class BookRow extends Component{
             <div>
                 <h4 className="book-title">{this.props.heading}</h4>
                 <div className="books-container row">
+                {console.log(this.props.sectionTitles)}
                     {this.props.books.filter((book) => 
-                        book.shelf === this.props.sectionTitles.shelfCategory).map((book) => {
+                        book.shelf === this.props.shelfCategory).map((book) => {
                             return (<BookItem key={book.id}
                                               title={book.title}
                                               authors={book.authors}
