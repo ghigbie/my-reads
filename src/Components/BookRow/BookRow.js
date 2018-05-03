@@ -19,7 +19,7 @@ class BookRow extends Component{
                         return (<BookItem key={book.id}
                                           title={book.title}
                                           author={book.authors}
-                                          image={book.imageLinks.smallThumbnail}
+                                          image={book.imageLinks.thumbnail}
                                           description={book.description}/>);
                     })}
                 </div>
