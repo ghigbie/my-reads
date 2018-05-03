@@ -20,7 +20,8 @@ class BookRow extends Component{
                                           title={book.title}
                                           authors={book.authors}
                                           image={book.imageLinks.thumbnail}
-                                          description={book.description}/>);
+                                          description={book.description}
+                                          shelf={book.shelf}/>);
                     })}
                 </div>
             </div>

@@ -21,7 +21,8 @@ BookItem.propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.array.isRequired,
     image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    description: PropTypes.string.isRequired,
+    shelf: PropTypes.string.shelf
 };
 
 export default BookItem;
