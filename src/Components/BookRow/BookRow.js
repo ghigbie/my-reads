@@ -6,7 +6,6 @@ import BookItem from './../BookItem/BookItem';
 
 class BookRow extends Component{
     static propTypes = {
-        sectionTitles: PropTypes.array.isRequired,
         heading: PropTypes.string.isRequired,
         shelfCategory: PropTypes.string.isRequired,
         books: PropTypes.array.isRequired
