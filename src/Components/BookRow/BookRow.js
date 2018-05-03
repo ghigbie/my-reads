@@ -15,7 +15,7 @@ class BookRow extends Component{
             <div>
                 <h4 className="book-title">{this.props.title}</h4>
                 <div className="books-container row">
-                    {this.props.books.map((book) => {
+                    {this.props.books.filter((book) => book.shelf === this.props.title).map((book) => {
                         return (<BookItem key={book.id}
                                           title={book.title}
                                           authors={book.authors}
