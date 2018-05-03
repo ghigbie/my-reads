@@ -16,7 +16,10 @@ const BookItem = (props) => {
 };
 
 BookItem.PropTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 };
 
 export default BookItem;
