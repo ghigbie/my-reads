@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as BookAPI from './BookAPI';
+import * as BookAPI from './utils/BookAPI';
 import './MyReadsApp.css';
 
 import Header from './Components/Header/Header';
@@ -18,7 +18,7 @@ class MyReadsApp extends Component {
   sectionTitles = ['Currently Reading', 'Want To Read', 'Read'];
   
   componentDidMount(){
-    BookAPI.getAll
+    BookAPI.getAll()
       .then((booksRequested) => {
         this.setState(() => ({books: booksRequested }));
         console.log(this.state.books);
