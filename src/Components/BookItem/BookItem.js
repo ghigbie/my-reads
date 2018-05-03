@@ -10,7 +10,7 @@ const BookItem = (props) => {
             <div className="card-body">
                 <h5 className="card-title book-title">{props.title}</h5>
                 <h5 className="card-title">{`By ${props.authors}`}</h5>
-                <p className="card-text book-description">{`${props.description.substring(0, 200)}...`}</p>
+                <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
                 <a href="#" className="btn btn-outline-primary btn-bottom">More Information</a>
             </div>
         </div>
