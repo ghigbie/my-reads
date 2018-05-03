@@ -9,7 +9,8 @@ const MainContent= (props) => {
         <div className="custom-container">
             {props.sectionTitles.map((title, index) => {
                 return (<BookRow key={index} 
-                                 title={title} 
+                                 heading={title.heading}
+                                 sectionTitles={props.sectionTitles}
                                  books={props.books}/>);
             })}
         </div>

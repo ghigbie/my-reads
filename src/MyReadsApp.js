@@ -15,9 +15,9 @@ class MyReadsApp extends Component {
   title = 'MyReads';
   subtitle = 'The world\'s most okayist book tracker...';
   footerText = 'The best way to organize your reading endevors...';
-  sectionTitles = [{category: 'currentlyReading', title: 'Currently Reading'},
-                   {category: 'wantToRead', title: 'Want to Read'},
-                   {category: 'read', title: 'Read'}];
+  sectionTitles = [{shelfCategory: 'currentlyReading', heading: 'Currently Reading'},
+                   {shelfCategory: 'wantToRead', heading: 'Want to Read'},
+                   {shelfCategory: 'read', heading: 'Read'}];
   
   componentDidMount(){
     BookAPI.getAll()

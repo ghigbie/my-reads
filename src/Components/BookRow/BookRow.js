@@ -6,22 +6,24 @@ import BookItem from './../BookItem/BookItem';
 
 class BookRow extends Component{
     static propTypes = {
-        title: PropTypes.string.isRequired,
+        sectionTitles: PropTypes.array.isRequired,
+        heading: PropTypes.string.isRequired,
         books: PropTypes.array.isRequired
     }
     
     render(){
         return(
             <div>
-                <h4 className="book-title">{this.props.title}</h4>
+                <h4 className="book-title">{this.props.heading}</h4>
                 <div className="books-container row">
-                    {this.props.books.filter((book) => book.shelf === this.props.title).map((book) => {
-                        return (<BookItem key={book.id}
-                                          title={book.title}
-                                          authors={book.authors}
-                                          image={book.imageLinks.thumbnail}
-                                          description={book.description}
-                                          shelf={book.shelf}/>);
+                    {this.props.books.filter((book) => 
+                        book.shelf === this.props.sectionTitles.shelfCategory).map((book) => {
+                            return (<BookItem key={book.id}
+                                              title={book.title}
+                                              authors={book.authors}
+                                              image={book.imageLinks.thumbnail}
+                                              description={book.description}
+                                              shelf={book.shelf}/>);
                     })}
                 </div>
             </div>
