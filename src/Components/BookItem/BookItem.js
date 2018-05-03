@@ -3,13 +3,16 @@ import './BookItem.css';
 import PropTypes from 'prop-types';
 
 const BookItem = (props) => {
+    
+    const trimmedString = `${props.description.substring(0, 200)}...`;
+    
     return(
         <div className="card book-item" style={{width: '18rem'}}>
             <img className="card-img-top" src={props.image} alt="Card image cap" />
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <h5 className="card-title">{props.authors}</h5>
-                <p className="card-text">{props.description.substring(0, 150)}</p>
+                <p className="card-text">{trimmedString}</p>
                 <a href="#" className="btn btn-outline-primary btn-bottom">More Information</a>
             </div>
         </div>
