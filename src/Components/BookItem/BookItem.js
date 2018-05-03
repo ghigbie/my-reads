@@ -7,8 +7,8 @@ const BookItem = (props) => {
         <div className="card book-item" style={{width: '18rem'}}>
             <img className="card-img-top" src={props.image} alt="Card image cap" />
             <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <h3>{props.author}</h3>
+                <h5 className="card-title">{props.title}</h5>
+                <h5 className="card-title">{props.authors}</h5>
                 <p className="card-text">{props.description}</p>
                 <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
@@ -16,9 +16,9 @@ const BookItem = (props) => {
     );
 };
 
-BookItem.PropTypes = {
+BookItem.propTypes = {
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 };

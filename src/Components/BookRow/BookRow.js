@@ -18,7 +18,7 @@ class BookRow extends Component{
                     {this.props.books.map((book) => {
                         return (<BookItem key={book.id}
                                           title={book.title}
-                                          author={book.authors}
+                                          authors={book.authors}
                                           image={book.imageLinks.thumbnail}
                                           description={book.description}/>);
                     })}
