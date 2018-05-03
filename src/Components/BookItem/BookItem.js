@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const BookItem = (props) => {
     
     return(
-        <div className="card book-item" style={{width: '18rem'}}>
+        <div className="card book-item">
             <img className="card-img-top" src={props.image} alt="Card image cap" />
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
