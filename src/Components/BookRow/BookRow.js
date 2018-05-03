@@ -12,7 +12,7 @@ class BookRow extends Component{
     
     render(){
         return(
-            <div>
+            <div className="flex">
                 <h4 className="book-title">{this.props.title}</h4>
                 <div className="books-container">
                     {this.props.books.map((book) => {
