@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as BookAPI from './utils/BookAPI';
+import * as StarterData from './services/dataService';
 import './MyReadsApp.css';
 
 import Header from './Components/Header/Header';
@@ -11,13 +12,6 @@ class MyReadsApp extends Component {
   state = {
     books: []
   }
-  
-  title = 'MyReads';
-  subtitle = 'The world\'s most okayist book tracker...';
-  footerText = 'The best way to organize your reading endevors...';
-  sectionTitles = [{shelfCategory: 'currentlyReading', heading: 'Currently Reading'},
-                   {shelfCategory: 'wantToRead', heading: 'Want to Read'},
-                   {shelfCategory: 'read', heading: 'Read'}];
   
   componentDidMount(){
     BookAPI.getAll()
@@ -31,11 +25,11 @@ class MyReadsApp extends Component {
   render() {
     return (
         <div>
-          <Header title={this.title}
-                  subtitle={this.subtitle}/>
-          <MainContent sectionTitles={this.sectionTitles}
+          <Header title={StarterData.title}
+                  subtitle={StarterData.subtitle}/>
+          <MainContent sectionTitles={StarterData.sectionTitles}
                        books={this.state.books}/>
-          <Footer footerText={this.footerText}/>
+          <Footer footerText={StarterData.footerText}/>
       </div>
     );
   }
