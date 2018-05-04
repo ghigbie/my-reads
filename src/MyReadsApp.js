@@ -29,16 +29,13 @@ class MyReadsApp extends Component {
   render() {
     return (
         <div>
-          <Route path="/" exact render={() => (
-            <div>
-              <Header title={starterData.title}
-                      subtitle={starterData.subtitle}/>
+            <Header title={starterData.title}
+                    subtitle={starterData.subtitle}/>
+            <Route path="/" exact render={() => (
               <MainContent sectionTitles={starterData.sectionTitles}
-                           books={this.state.books}/>
-              <Footer footerText={starterData.footerText}/>
-            </div>)
-          }/>
-          <Route path="*" component={NotFound}/>
+                           books={this.state.books}/>)} />
+            <Route path="*" component={NotFound} />
+            <Footer footerText={starterData.footerText}/>
       </div>
     );
   }
