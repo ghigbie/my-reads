@@ -23,7 +23,6 @@ class MyReadsApp extends Component {
         this.setState(() => ({books: booksRequested }));
         console.log(this.state.books);
       });
-      
   }
   
   render() {
