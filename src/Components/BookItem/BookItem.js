@@ -9,7 +9,7 @@ const BookItem = (props) => {
             <img className="card-img-top book-image" src={props.image} alt={props.title}/>
             <div className="card-body">
                 <h5 className="card-title book-title">{props.title}</h5>
-                <h5 className="card-title">{`By ${props.authors}`}</h5>
+                <h5 className="card-title by-line">{`By ${props.authors}`}</h5>
                 <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
                 <button className="book-shelf-changer"></button>
                 <a href="#" 

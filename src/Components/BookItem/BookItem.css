@@ -10,10 +10,20 @@
 .book-image{
     max-width: 225px;
     margin: auto;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: #eee;
 }
 
 .book-title{
     font-weight: 800;
+    padding: 20px 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.by-line{
+    font-size: 1em;
+    font-weight: 600;
 }
 
 .book-description{
