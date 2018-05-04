@@ -11,7 +11,7 @@ const BookItem = (props) => {
                 <h5 className="card-title book-title">{props.title}</h5>
                 <h5 className="card-title">{`By ${props.authors}`}</h5>
                 <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
-                <button className="book-floating-action"></button>
+                <button className="book-shelf-changer"></button>
                 <a href="#" 
                    className="btn btn-outline-primary btn-bottom">More Information</a>
             </div>
