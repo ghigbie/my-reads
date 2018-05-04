@@ -14,7 +14,7 @@ class BookRow extends Component{
     render(){
         return(
             <div>
-                <h4 className="book-title">{this.props.heading}</h4>
+                <h4 className="shelf-title">{this.props.heading}</h4>
                 <div className="books-container row">
                 {console.log(this.props.sectionTitles)}
                     {this.props.books.filter((book) => 
