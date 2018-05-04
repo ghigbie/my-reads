@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import * as BookAPI from './utils/BookAPI';
 import * as StarterData from './services/dataService';
 import './MyReadsApp.css';
@@ -25,11 +26,15 @@ class MyReadsApp extends Component {
   render() {
     return (
         <div>
-          <Header title={StarterData.title}
-                  subtitle={StarterData.subtitle}/>
-          <MainContent sectionTitles={StarterData.sectionTitles}
-                       books={this.state.books}/>
-          <Footer footerText={StarterData.footerText}/>
+          <Route path="/" render={()=>(
+            <div>
+              <Header title={StarterData.title}
+                      subtitle={StarterData.subtitle}/>
+              <MainContent sectionTitles={StarterData.sectionTitles}
+                           books={this.state.books}/>
+              <Footer footerText={StarterData.footerText}/>
+            </div>)}>
+          </Route>
       </div>
     );
   }
