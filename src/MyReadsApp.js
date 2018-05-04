@@ -29,11 +29,11 @@ class MyReadsApp extends Component {
         <div>
           <Route path="/" render={() => (
           <div>
-            <Header title={this.starterData.title}
-                    subtitle={this.starterData.subtitle}/>
-            <MainContent sectionTitles={this.starterData.sectionTitles}
+            <Header title={starterData.title}
+                    subtitle={starterData.subtitle}/>
+            <MainContent sectionTitles={starterData.sectionTitles}
                          books={this.state.books}/>
-            <Footer footerText={this.starterData.footerText}/>
+            <Footer footerText={starterData.footerText}/>
           </div>)
           }/>
       </div>
