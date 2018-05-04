@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import * as BookAPI from './utils/BookAPI';
-import * as StarterData from './services/dataService';
+import * as starterData from './services/starterData';
 import './MyReadsApp.css';
 
 import Header from './Components/Header/Header';
@@ -13,6 +13,7 @@ class MyReadsApp extends Component {
   state = {
     books: []
   }
+  
   
   componentDidMount(){
     BookAPI.getAll()
@@ -26,15 +27,15 @@ class MyReadsApp extends Component {
   render() {
     return (
         <div>
-          <Route path="/" render={()=>(
-            <div>
-              <Header title={StarterData.title}
-                      subtitle={StarterData.subtitle}/>
-              <MainContent sectionTitles={StarterData.sectionTitles}
-                           books={this.state.books}/>
-              <Footer footerText={StarterData.footerText}/>
-            </div>)}>
-          </Route>
+          <Route path="/" render={() => (
+          <div>
+            <Header title={this.starterData.title}
+                    subtitle={this.starterData.subtitle}/>
+            <MainContent sectionTitles={this.starterData.sectionTitles}
+                         books={this.state.books}/>
+            <Footer footerText={this.starterData.footerText}/>
+          </div>)
+          }/>
       </div>
     );
   }
