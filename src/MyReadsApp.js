@@ -7,6 +7,8 @@ import './MyReadsApp.css';
 import Header from './Components/Header/Header';
 import MainContent from './Components/MainContent/MainContent';
 import Footer from './Components/Footer/Footer';
+//routes
+import NotFound from './Routes/NotFound';
 
 class MyReadsApp extends Component {
   
@@ -27,15 +29,16 @@ class MyReadsApp extends Component {
   render() {
     return (
         <div>
-          <Route path="/" render={() => (
-          <div>
-            <Header title={starterData.title}
-                    subtitle={starterData.subtitle}/>
-            <MainContent sectionTitles={starterData.sectionTitles}
-                         books={this.state.books}/>
-            <Footer footerText={starterData.footerText}/>
-          </div>)
+          <Route path="/" exact render={() => (
+            <div>
+              <Header title={starterData.title}
+                      subtitle={starterData.subtitle}/>
+              <MainContent sectionTitles={starterData.sectionTitles}
+                           books={this.state.books}/>
+              <Footer footerText={starterData.footerText}/>
+            </div>)
           }/>
+          <Route path="*" component={NotFound}/>
       </div>
     );
   }
