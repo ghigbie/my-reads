@@ -4,7 +4,7 @@ import './../routeStyles.css';
 
 const BookInfo = (props) => (
     <div className="container">
-        <NavLink to="/"></NavLink>
+        <NavLink to="/" className="back-arrow"></NavLink>
         <h1>More information about a particular book</h1>
     </div>
 );
