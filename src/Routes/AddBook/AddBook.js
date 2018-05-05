@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './../routeStyles.css';
+
+import BackArrow from './../../Components/BackArrow';
 
 const AddBook = () => (
     <div>
-        <NavLink to="/" className="back-arrow"></NavLink>
+        <BackArrow />
         Add Book Page
     </div>
 );
