@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import * as BookAPI from './utils/BookAPI';
 import * as starterData from './services/starterData';
 import './MyReadsApp.css';
@@ -18,7 +18,6 @@ class MyReadsApp extends Component {
     books: []
   }
   
-  
   componentDidMount(){
     BookAPI.getAll()
       .then((booksRequested) => {
@@ -29,7 +28,7 @@ class MyReadsApp extends Component {
   
   render() {
     return (
-        <div>
+        <BrowserRouter>
             <Header title={starterData.title}
                     subtitle={starterData.subtitle}/>
             <Switch>
@@ -41,7 +40,7 @@ class MyReadsApp extends Component {
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>
-      </div>
+      </BrowserRouter>
     );
   }
 }
