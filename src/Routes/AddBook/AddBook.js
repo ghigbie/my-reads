@@ -1,11 +1,10 @@
 import React from 'react';
 
-const AddBook = () => {
-    return(
-        <div>
+const AddBook = () => (
+    <div>
         Add Book Page
-        </div>
-    );
-};
+    </div>
+);
+
 
 export default AddBook;
