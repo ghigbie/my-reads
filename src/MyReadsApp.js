@@ -28,7 +28,7 @@ class MyReadsApp extends Component {
   
   render() {
     return (
-        <BrowserRouter>
+        <div>
             <Header title={starterData.title}
                     subtitle={starterData.subtitle}/>
             <Switch>
@@ -40,7 +40,7 @@ class MyReadsApp extends Component {
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>
-      </BrowserRouter>
+      </div>
     );
   }
 }
