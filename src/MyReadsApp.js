@@ -8,11 +8,9 @@ import Header from './Components/Header/Header';
 import MainContent from './Components/MainContent/MainContent';
 import Footer from './Components/Footer/Footer';
 //routes
-import IndividualBook from './Routes/IndvidualBook/IndividualBook';
+import BookInfo from './Routes/BookInfo/BookInfo';
 import AddBook from './Routes/AddBook/AddBook';
 import NotFound from './Routes/NotFound/NotFound';
-
-
 
 class MyReadsApp extends Component {
   
@@ -39,7 +37,7 @@ class MyReadsApp extends Component {
                 <MainContent sectionTitles={starterData.sectionTitles}
                              books={this.state.books}/>)} />
               <Route path="/add" component={AddBook} />
-              <Route path="/:id" component={BookIndividual} />
+              <Route path="/:id" component={BookInfo} />
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>
