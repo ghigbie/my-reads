@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import * as BookAPI from './utils/BookAPI';
 import * as starterData from './services/starterData';
 import './MyReadsApp.css';
@@ -32,14 +32,14 @@ class MyReadsApp extends Component {
         <div>
             <Header title={starterData.title}
                     subtitle={starterData.subtitle}/>
-            <div>
+            <Switch>
               <Route path="/" exact render={() => (
                 <MainContent sectionTitles={starterData.sectionTitles}
                              books={this.state.books}/>)} />
-              <Route path="/edit" component={AddBook] />
+              <Route path="/add" component={AddBook} />
               <Route path="*" component={NotFound} />
               
-            </div>
+            </Switch>
             <Footer footerText={starterData.footerText}/>
       </div>
     );
