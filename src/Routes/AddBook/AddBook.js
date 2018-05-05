@@ -4,7 +4,7 @@ import './../routeStyles.css';
 
 const AddBook = () => (
     <div>
-        <NavLink to="/"></NavLink>
+        <NavLink to="/" className="back-arrow"></NavLink>
         Add Book Page
     </div>
 );
