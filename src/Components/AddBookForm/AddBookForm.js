@@ -2,9 +2,9 @@ import React from 'react';
 
 import './AddBook.css';
 
-const AddBook = () => (
+const AddBookForm = () => (
     <form>
     </form>
 );
 
-export default AddBook;
+export default AddBookForm;
