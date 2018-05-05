@@ -13,9 +13,21 @@ class AddBookForm extends Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="title" placeholder="Title" />
-                    <input type="text" name="authors" placeholder="Author(s)" />
-                    <input type="textarea" name="description" placeholder="Description"/>
+                    <div>
+                        <input type="text" name="title" placeholder="Title" />
+                    </div>
+                    <div>
+                        <input type="text" name="authors" placeholder="Author(s)" />
+                    </div>
+                    <div>
+                        <input type="textarea" name="description" placeholder="Description"/>
+                    </div>
+                    <div>
+                        <input type="image" name="image" placeholder="Upload an image" />
+                    </div>
+                    <div>
+                        <button type="submit" className="btn btn-defualt">Add a Book</button>
+                    </div>
                 </form>
             </div>
         );
