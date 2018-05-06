@@ -12,13 +12,23 @@ const BookItem = (props) => (
             <h5 className="card-title book-title">{props.title}</h5>
             <h5 className="card-title by-line">{`By ${props.authors}`}</h5>
             <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
-            <button className="book-shelf-changer"></button>
+            <button className="book-shelf-changer dropdown-toggle" 
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
             <button type="button" 
-                          className="btn btn-outline-primary btn-bottom" 
-                          data-toggle="modal" 
-                          data-target={`#${props.id}`}>
-                          More Information
-                    </button>
+                    className="btn btn-outline-primary btn-bottom" 
+                    data-toggle="modal" 
+                    data-target={`#${props.id}`}>
+                    More Information
+            </button>
            {/* <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink> */}
             <Modal modalID={props.id}

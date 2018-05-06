@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const Modal = (props) => (
         <div className="modal fade" id={props.id} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+           {console.log('modal has loaded')}
           <div className="modal-dialog modal-lg modal-size" role="document">
             <div className="modal-content">
               <div className="modal-header">
