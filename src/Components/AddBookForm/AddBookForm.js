@@ -17,21 +17,18 @@ class AddBookForm extends Component{
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-             
                         <input type="text" 
                                name="title" 
                                placeholder="Enter a book title" 
                                className="form-control" />
                     </div>
                     <div className="form-group">
-                        
                         <input type="text" 
                                name="authors" 
                                placeholder="Enter the Author(s)"
                                className="form-control"/>
                     </div>
                     <div className="form-group">
-                       
                         <input type="textarea" 
                                name="description" 
                                placeholder="Enter a Description of a Book"
