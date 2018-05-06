@@ -11,9 +11,11 @@ const BookItem = (props) => (
         <img className="card-img-top book-image" src={props.image} alt={props.title}/>
         <div className="card-body">
             <h5 className="card-title book-title">{props.title}</h5>
-            <h5 className="card-title by-line">{`By ${props.authors}`}</h5>
+            <h5 className="card-title by-line by-line">{`By ${props.authors}`}</h5>
             <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
-            <DropdownButton uniqueID={props.id}/>
+            <div className="btn-bottom-right">
+                <DropdownButton uniqueID={props.id}/>
+            </div>
             <button type="button" 
                     className="btn btn-outline-primary btn-bottom" 
                     data-toggle="modal" 
