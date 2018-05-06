@@ -12,6 +12,9 @@ class AddBookForm extends Component{
     render(){
         return(
             <div className="container">
+                <div className="add-title">
+                    <h3>Add a Book</h3>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
@@ -35,8 +38,9 @@ class AddBookForm extends Component{
                                className="form-control"/>
                     </div>
                     
-                    <div className="input-group mb-3">
+                    <div className="input-group mb-3 form-group">
                         <div className="custom-file">
+                            <label htmlFor="description">Description</label>
                             <input type="file" 
                                    className="custom-file-input" 
                                    name="image"/>
