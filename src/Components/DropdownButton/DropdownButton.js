@@ -3,7 +3,7 @@ import './DropdownButton.css';
 import PropTypes from 'prop-types';
 
 const DropdownButton = (props) => (
-    <div className="dropdown">
+    <div className="dropdown btn-bottom">
         <button className="book-shelf-changer" 
                 type="button" 
                 id={props.id}
