@@ -11,22 +11,41 @@ class AddBookForm extends Component{
     
     render(){
         return(
-            <div>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text" name="title" placeholder="Title" />
+                    <div className="form-group">
+                        <label htmlFor="title">Title</label>
+                        <input type="text" 
+                               name="title" 
+                               placeholder="Enter a book title" 
+                               className="form-control" />
                     </div>
-                    <div>
-                        <input type="text" name="authors" placeholder="Author(s)" />
+                    <div className="form-group">
+                        <label htmlFor="authors">Author(s)</label>
+                        <input type="text" 
+                               name="authors" 
+                               placeholder="Author(s)"
+                               className="form-control"/>
                     </div>
-                    <div>
-                        <input type="textarea" name="description" placeholder="Description"/>
+                    <div className="form-group">
+                        <label htmlFor="description">Description</label>
+                        <input type="textarea" 
+                               name="description" 
+                               placeholder="Enter a Description of a Book"
+                               className="form-control"/>
                     </div>
-                    <div>
-                        <input type="image" name="image" placeholder="Upload an image" />
+                    <div className="form-group">
+                        <label htmlFor="image">Upload an Image</label>
+                        <div>
+                        <input type="file" 
+                               name="image" 
+                               accept="image/*" 
+                               placeholder="Upload an image"/>
+                        </div>
                     </div>
-                    <div>
-                        <button type="submit" className="btn btn-defualt">Add a Book</button>
+                    <div className="form-group">
+                        <input type="submit" 
+                            className="btn btn-outline-dark" />
                     </div>
                 </form>
             </div>
