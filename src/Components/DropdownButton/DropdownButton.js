@@ -6,7 +6,7 @@ const DropdownButton = (props) => (
     <div className="dropdown btn-bottom">
         <button className="book-shelf-changer" 
                 type="button" 
-                id={props.id}
+                id={props.uniqueID}
                 data-toggle="dropdown" 
                 aria-haspopup="true">
         </button>
@@ -23,7 +23,7 @@ const DropdownButton = (props) => (
 );
 
 DropdownButton.propTypes = {
-  id: PropTypes.string.isRequired  
+  uniqueID: PropTypes.string.isRequired  
 };
 
 export default DropdownButton;
