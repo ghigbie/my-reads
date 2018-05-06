@@ -1,26 +1,25 @@
 import React from 'react';
-import {Dropdown, DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
 import './DropdownButton.css';
 import PropTypes from 'prop-types';
 
 const DropdownButton = (props) => (
-  <Dropdown>
-                <DropdownTrigger>Profile</DropdownTrigger>
-                <DropdownContent>
-                    <img src="avatar.jpg" /> Username
-                    <ul>
-                        <li>
-                            <a href="/profile">Profile</a>
-                        </li>
-                        <li>
-                            <a href="/favorites">Favorites</a>
-                        </li>
-                        <li>
-                            <a href="/logout">Log Out</a>
-                        </li>
-                    </ul>
-                </DropdownContent>
-            </Dropdown>
+    <div className="dropdown">
+        <button className="book-shelf-changer" 
+                type="button" 
+                id={props.uniqueID}
+                data-toggle="dropdown" 
+                aria-haspopup="true">
+        </button>
+        <div className="dropdown-menu" 
+             aria-labelledby="dropdownMenuButton">
+            <a className="dropdown-item" 
+               href="#">Action</a>
+            <a className="dropdown-item" 
+               href="#">Another action</a>
+            <a className="dropdown-item"
+               href="#">Something else here</a>
+        </div>
+    </div>
 );
 
 DropdownButton.propTypes = {
