@@ -4,10 +4,9 @@ import BackArrow from './../../Components/BackArrow/BackArrow';
 import AddBookForm from './../../Components/AddBookForm/AddBookForm';
 
 const AddBook = () => (
-    <div>
+    <div className="container">
         <BackArrow />
         <AddBookForm />
-        Add Book Page
     </div>
 );
 

@@ -34,15 +34,20 @@ class AddBookForm extends Component{
                                placeholder="Enter a Description of a Book"
                                className="form-control"/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="image">Upload an Image</label>
-                        <div>
-                        <input type="file" 
-                               name="image" 
-                               accept="image/*" 
-                               placeholder="Upload an image"/>
+                    
+                    <div className="input-group mb-3">
+                        <div className="custom-file">
+                            <input type="file" 
+                                   className="custom-file-input" 
+                                   name="image"/>
+                            <label className="custom-file-label" 
+                                   htmlFor="inputGroupFile02">Upload a Book Image</label>
+                        </div>
+                        <div className="input-group-append">
+                            <span className="input-group-text">Upload</span>
                         </div>
                     </div>
+                    
                     <div className="form-group">
                         <input type="submit" 
                             className="btn btn-outline-dark" />
