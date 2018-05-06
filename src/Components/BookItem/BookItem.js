@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import './BookItem.css';
 import PropTypes from 'prop-types';
 
+import Modal from './../Modal/Modal';
+
 const BookItem = (props) => (
     <div className="card book-item">
         <img className="card-img-top book-image" src={props.image} alt={props.title}/>
@@ -13,6 +15,12 @@ const BookItem = (props) => (
             <button className="book-shelf-changer"></button>
             <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink>
+            <Modal title={props.title}
+                   authors={props.authors}
+                   image={props.image}
+                   description={props.description}
+                   id={props.id}
+                   shelf={props.shelf}/>
         </div>
     </div>
 );
