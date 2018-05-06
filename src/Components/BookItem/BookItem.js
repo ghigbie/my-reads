@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom';
 import './BookItem.css';
 import PropTypes from 'prop-types';
 
@@ -21,12 +21,14 @@ const BookItem = (props) => (
                     </button>
            {/* <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink> */}
-            <Modal title={props.title}
+            <Modal modalID={props.id}
+                   title={props.title}
                    authors={props.authors}
                    image={props.image}
                    description={props.description}
                    id={props.id}
                    shelf={props.shelf}/>
+                   {console.log(props.id)}
         </div>
     </div>
 );
