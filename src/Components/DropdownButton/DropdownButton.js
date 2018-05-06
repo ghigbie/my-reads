@@ -1,5 +1,6 @@
 import React from 'react';
 import './DropdownButton.css';
+import PropTypes from 'prop-types';
 
 const DropdownButton = () => (
             <div className="dropdown">
@@ -20,5 +21,9 @@ const DropdownButton = () => (
                 </div>
             </div>
 );
+
+DropdownButton.propTypes = {
+  id: PropTypes.string.isRequired  
+};
 
 export default DropdownButton;
