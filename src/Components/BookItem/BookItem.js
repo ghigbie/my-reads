@@ -22,6 +22,13 @@ const BookItem = (props) => (
                     data-target={`#${props.id}`}>
                     More Information
             </button>
+            
+            <select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
            {/* <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink> */}
             <Modal modalID={props.id}
