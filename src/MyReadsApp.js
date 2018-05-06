@@ -36,7 +36,7 @@ class MyReadsApp extends Component {
                 <MainContent sectionTitles={starterData.sectionTitles}
                              books={this.state.books}/>)} />
               <Route path="/add" component={AddBook} />
-              <Route path="/:id" component={BookInfo} />
+              <Route path="/details/:id" component={BookInfo} />
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>

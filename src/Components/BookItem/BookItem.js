@@ -11,7 +11,7 @@ const BookItem = (props) => (
             <h5 className="card-title by-line">{`By ${props.authors}`}</h5>
             <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
             <button className="book-shelf-changer"></button>
-            <NavLink to={`/${props.id}`} 
+            <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink>
         </div>
     </div>
