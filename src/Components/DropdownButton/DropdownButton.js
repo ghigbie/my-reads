@@ -11,6 +11,7 @@ class DropdownButton extends Component{
     this.state = {
       dropdownOpen: false
     };
+    
     this.forcedStyle = {
           borderRadius: '50%',
         };
@@ -18,7 +19,8 @@ class DropdownButton extends Component{
 
   toggle() {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      dropdownOpen: !this.state.dropdownOpen,
+      shelf: this.value
     });
   }
   
@@ -40,12 +42,19 @@ class DropdownButton extends Component{
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
-          <DropdownItem onClick={this.props.changeShelf}>
+          
+          <DropdownItem value={this.props.sectionTitles[0].shelfCategory}
+                        onClick={() => this.toggle}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
-          <DropdownItem onClick={(e) => this.props.changeShelf}>
+                        
+          <DropdownItem value={this.props.sectionTitles[0].shelfCategory}
+                        onClick={() => this.toggle}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
-          <DropdownItem onClick={this.props.changeShelf}>
+                        
+          <DropdownItem value={this.props.sectionTitles[0].shelfCategory}
+                        onChange={() => this.props.changeShelf}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
+                        
           <DropdownItem>None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
