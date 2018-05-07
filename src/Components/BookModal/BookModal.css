@@ -1,5 +1,7 @@
 .modal-book-image{
-    width: 100%;
+    width: 128px;
+    height: 158px;
+    margin: 20px auto 20px auto;
 }
 
 .detailed-description{

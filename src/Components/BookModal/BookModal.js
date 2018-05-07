@@ -17,32 +17,34 @@ class BookModal extends Component{
       modal: !this.state.modal
     });
   }
+  
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }
 
   render() {
     return (
       <div>
         <Button className="btn btn-outline-primary btn-bottom" onClick={this.toggle}>More Information</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={this.state.modal} 
+               toggle={this.toggle} 
+               className="modal-dialog modal-lg modal-size" 
+               role="document">
           <ModalHeader toggle={this.toggle}>{this.props.title} by {this.props.authors}</ModalHeader>
+          <img className='modal-book-image' 
+                     src={this.props.image} 
+                     alt={`Image of ${this.props.title} by ${this.props.authors}`}/>
           <ModalBody>{this.props.description}</ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="secondary" onClick={this.toggle}>Close</Button>
           </ModalFooter>
         </Modal>
       </div>
     );
   }
 }
-
-
-Modal.propTypes = {
-    title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    shelf: PropTypes.string.isRequired
-};
 
 export default BookModal;
