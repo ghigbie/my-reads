@@ -4,7 +4,7 @@ import './BookItem.css';
 import PropTypes from 'prop-types';
 
 import DropdownButton from './../DropdownButton/DropdownButton';
-import Modal from './../Modal/Modal';
+import BookModal from './../BookModal/BookModal';
 
 const BookItem = (props) => (
     <div className="card book-item">
@@ -17,6 +17,15 @@ const BookItem = (props) => (
                 <DropdownButton uniqueID={props.id}
                                 sectionTitles={props.sectionTitles}/>
             </div>
+            <div className="btn-bottom">
+                <BookModal title={props.title}
+                   authors={props.authors}
+                   image={props.image}
+                   description={props.description}
+                   id={props.id}
+                   shelf={props.shelf}/>
+            </div>
+            
             <button type="button" 
                     className="btn btn-outline-primary btn-bottom" 
                     data-toggle="modal" 
@@ -25,14 +34,12 @@ const BookItem = (props) => (
             </button>
            {/* <NavLink to={`/details/${props.id}`} 
                      className="btn btn-outline-primary btn-bottom">More Information</NavLink> */}
-            <Modal modalID={props.id}
-                   title={props.title}
+            <BookModal title={props.title}
                    authors={props.authors}
                    image={props.image}
                    description={props.description}
                    id={props.id}
                    shelf={props.shelf}/>
-                   {console.log(props.id)}
         </div>
     </div>
 );

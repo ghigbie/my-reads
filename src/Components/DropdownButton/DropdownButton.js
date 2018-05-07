@@ -35,6 +35,7 @@ class DropdownButton extends Component{
           <DropdownItem>{this.props.sectionTitles[0].heading}</DropdownItem>
           <DropdownItem>{this.props.sectionTitles[1].heading}</DropdownItem>
           <DropdownItem>{this.props.sectionTitles[2].heading}</DropdownItem>
+          <DropdownItem>None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
     );
