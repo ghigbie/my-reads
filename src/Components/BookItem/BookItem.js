@@ -7,10 +7,6 @@ import DropdownButton from './../DropdownButton/DropdownButton';
 import BookModal from './../BookModal/BookModal';
 
 class BookItem extends Component{
-    changeBookShelf(){
-        alert('change book shelf called, yeah!');
-    }
-    
     render(){
         return(
     
