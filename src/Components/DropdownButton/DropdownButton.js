@@ -26,7 +26,9 @@ class DropdownButton extends Component{
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} 
                       toggle={this.toggle}>
-        <DropdownToggle color="primary" style={this.forcedStyle} className="book-shelf-changer">
+        <DropdownToggle color="primary" 
+                        style={this.forcedStyle} 
+                        className="book-shelf-changer">
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
