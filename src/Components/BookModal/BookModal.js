@@ -28,18 +28,20 @@ class BookModal extends Component{
   render() {
     return (
       <div>
-        <Button className="btn btn-outline-primary btn-bottom" onClick={this.toggle}>More Information</Button>
+        <Button className="btn btn-outline-primary btn-bottom" 
+                onClick={this.toggle}>More Information</Button>
         <Modal isOpen={this.state.modal} 
                toggle={this.toggle} 
                className="modal-dialog modal-lg modal-size" 
                role="document">
           <ModalHeader toggle={this.toggle}>{this.props.title} by {this.props.authors}</ModalHeader>
           <img className='modal-book-image' 
-                     src={this.props.image} 
-                     alt={`Image of ${this.props.title} by ${this.props.authors}`}/>
+               src={this.props.image} 
+               alt={`Image of ${this.props.title} by ${this.props.authors}`}/>
           <ModalBody>{this.props.description}</ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>Close</Button>
+            <Button color="secondary" 
+                    onClick={this.toggle}>Close</Button>
           </ModalFooter>
         </Modal>
       </div>
