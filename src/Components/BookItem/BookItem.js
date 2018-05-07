@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 //import { NavLink } from 'react-router-dom';
 import './BookItem.css';
 import PropTypes from 'prop-types';
@@ -6,28 +6,33 @@ import PropTypes from 'prop-types';
 import DropdownButton from './../DropdownButton/DropdownButton';
 import BookModal from './../BookModal/BookModal';
 
-const BookItem = (props) => (
+class BookItem extends Component{
+    render(){
+        return(
+    
     <div className="card book-item">
-        <img className="card-img-top book-image" src={props.image} alt={props.title}/>
+        <img className="card-img-top book-image" src={this.props.image} alt={this.props.title}/>
         <div className="card-body">
-            <h5 className="card-title book-title">{props.title}</h5>
-            <h5 className="card-title by-line by-line">{`By ${props.authors}`}</h5>
-            <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
+            <h5 className="card-title book-title">{this.props.title}</h5>
+            <h5 className="card-title by-line by-line">{`By ${this.props.authors}`}</h5>
+            <p className="card-text book-description">{`${this.props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
-                <DropdownButton sectionTitles={props.sectionTitles}/>
+                <DropdownButton sectionTitles={this.props.sectionTitles}/>
             </div>
             <div className="btn-bottom">
-                <BookModal title={props.title}
-                           authors={props.authors}
-                           image={props.image}
-                           description={props.description}
-                           id={props.id}
-                           shelf={props.shelf}
-                           changeShelf={props.changeShelf}/>
+                <BookModal title={this.props.title}
+                           authors={this.props.authors}
+                           image={this.this.props.image}
+                           description={this.props.description}
+                           id={this.props.id}
+                           shelf={this.props.shelf}
+                           changeShelf={this.props.changeShelf}/>
             </div>
         </div>
     </div>
 );
+}
+}
 
 
 BookItem.propTypes = {

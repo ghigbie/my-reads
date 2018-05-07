@@ -32,6 +32,7 @@ class DropdownButton extends Component{
 
   render() {
     return (
+      <div><button onClick={this.props.changeShelf}>moo</button>
       <ButtonDropdown isOpen={this.state.dropdownOpen} 
                       toggle={this.toggle}>
         <DropdownToggle color="primary" 
@@ -49,6 +50,7 @@ class DropdownButton extends Component{
           <DropdownItem>None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
+      </div>
     );
   }
 }
