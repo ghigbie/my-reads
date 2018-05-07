@@ -25,7 +25,6 @@ class DropdownButton extends Component{
                       toggle={this.toggle}
                       className="book-shelf-changer">
         <DropdownToggle caret>
-          Button Dropdown
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
