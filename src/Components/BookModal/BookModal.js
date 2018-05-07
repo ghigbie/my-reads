@@ -28,7 +28,8 @@ class BookModal extends Component{
   render() {
     return (
       <div>
-        <Button className="btn btn-outline-primary btn-bottom" 
+        <Button className="btn btn-outline-primary" 
+                
                 onClick={this.toggle}>More Information</Button>
         <Modal isOpen={this.state.modal} 
                toggle={this.toggle} 

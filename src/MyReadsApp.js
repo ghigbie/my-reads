@@ -28,6 +28,7 @@ class MyReadsApp extends Component {
   
   handleChangeShelf(e){
     alert('Handle change shelf called');
+    alert(e.target.value);
   }
   
   render() {

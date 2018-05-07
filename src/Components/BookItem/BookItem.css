@@ -27,13 +27,8 @@
     font-weight: 600;
 }
 
-.book-description{
-    /*max-height: 100px;*/
-}
-
 .btn-bottom{
     position: absolute;
-    margin-top: 10px;
     bottom: 5px;
     left: 5px;
 }

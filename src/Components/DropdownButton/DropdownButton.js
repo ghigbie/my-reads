@@ -42,7 +42,7 @@ class DropdownButton extends Component{
           <DropdownItem header>Move to...</DropdownItem>
           <DropdownItem onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
-          <DropdownItem onClick={this.props.changeShelf}>
+          <DropdownItem onClick={(e) => this.props.changeShelf}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
           <DropdownItem onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
