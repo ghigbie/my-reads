@@ -29,7 +29,7 @@ class DropdownButton extends Component{
         <DropdownToggle color="primary" style={this.forcedStyle} className="book-shelf-changer">
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem header>Move to..</DropdownItem>
+          <DropdownItem header>Move to...</DropdownItem>
           <DropdownItem>{this.props.sectionTitles[0].heading}</DropdownItem>
           <DropdownItem>{this.props.sectionTitles[1].heading}</DropdownItem>
           <DropdownItem>{this.props.sectionTitles[2].heading}</DropdownItem>
