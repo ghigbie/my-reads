@@ -27,11 +27,10 @@ class DropdownButton extends Component{
         <DropdownToggle caret>
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem header>Move to..</DropdownItem>
+          <DropdownItem>{this.props.sectionTitles[0].heading}</DropdownItem>
+          <DropdownItem>{this.props.sectionTitles[1].heading}</DropdownItem>
+          <DropdownItem>{this.props.sectionTitles[2].heading}</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
     );
@@ -39,8 +38,9 @@ class DropdownButton extends Component{
 }
 
 
-// DropdownButton.propTypes = {
-//   uniqueID: PropTypes.string.isRequired  
-// };
+DropdownButton.propTypes = {
+  uniqueID: PropTypes.string.isRequired,
+  sectionTitles: PropTypes.array.isRequired
+};
 
 export default DropdownButton;

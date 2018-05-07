@@ -8,7 +8,8 @@ class BookRow extends Component{
     static propTypes = {
         heading: PropTypes.string.isRequired,
         shelfCategory: PropTypes.string.isRequired,
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        sectionTitles: PropTypes.array.isRequired
     }
     
     render(){
@@ -25,7 +26,8 @@ class BookRow extends Component{
                                               image={book.imageLinks.thumbnail}
                                               description={book.description}
                                               id={book.id}
-                                              shelf={book.shelf}/>);
+                                              shelf={book.shelf}
+                                              sectionTitles={this.props.sectionTitles}/>);
                     })}
                 </div>
             </div>

@@ -14,7 +14,8 @@ const BookItem = (props) => (
             <h5 className="card-title by-line by-line">{`By ${props.authors}`}</h5>
             <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
-                <DropdownButton uniqueID={props.id}/>
+                <DropdownButton uniqueID={props.id}
+                                sectionTitles={props.sectionTitles}/>
             </div>
             <button type="button" 
                     className="btn btn-outline-primary btn-bottom" 
@@ -43,7 +44,8 @@ BookItem.propTypes = {
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    shelf: PropTypes.string.isRequired
+    shelf: PropTypes.string.isRequired,
+    sectionTitles: PropTypes.array.isRequired
 };
 
 export default BookItem;
