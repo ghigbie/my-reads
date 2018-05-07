@@ -8,7 +8,6 @@ import Header from './Components/Header/Header';
 import MainContent from './Components/MainContent/MainContent';
 import Footer from './Components/Footer/Footer';
 //routes
-import BookInfo from './Routes/BookInfo/BookInfo';
 import AddBook from './Routes/AddBook/AddBook';
 import SearchPage from './Routes/SearchPage/SearchPage';
 import NotFound from './Routes/NotFound/NotFound';
@@ -38,7 +37,6 @@ class MyReadsApp extends Component {
                              books={this.state.books}/>)} />
               <Route path="/add" component={AddBook} />
               <Route path="/search" component={SearchPage} />
-              <Route path="/details/:id" component={BookInfo} />
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>
