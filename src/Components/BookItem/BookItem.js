@@ -7,6 +7,10 @@ import DropdownButton from './../DropdownButton/DropdownButton';
 import BookModal from './../BookModal/BookModal';
 
 class BookItem extends Component{
+    changeBookShelf(){
+        alert('change book shelf called, yeah!');
+    }
+    
     render(){
         return(
     
@@ -17,16 +21,16 @@ class BookItem extends Component{
             <h5 className="card-title by-line by-line">{`By ${this.props.authors}`}</h5>
             <p className="card-text book-description">{`${this.props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
-                <DropdownButton sectionTitles={this.props.sectionTitles}/>
+                <DropdownButton sectionTitles={this.props.sectionTitles}
+                                changeShelf={this.props.changeShelf}/>
             </div>
             <div className="btn-bottom">
                 <BookModal title={this.props.title}
                            authors={this.props.authors}
-                           image={this.this.props.image}
+                           image={this.props.image}
                            description={this.props.description}
                            id={this.props.id}
-                           shelf={this.props.shelf}
-                           changeShelf={this.props.changeShelf}/>
+                           shelf={this.props.shelf}/>
             </div>
         </div>
     </div>

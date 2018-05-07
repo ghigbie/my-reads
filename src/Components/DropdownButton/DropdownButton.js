@@ -41,11 +41,11 @@ class DropdownButton extends Component{
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
-          <DropdownItem onClick={this.handleChoice}>
+          <DropdownItem onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
-          <DropdownItem onClick={(e) => this.props.changeShelf}>
+          <DropdownItem onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
-          <DropdownItem onClick={(e) => this.props.changeShelf}>
+          <DropdownItem onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
           <DropdownItem>None</DropdownItem>
         </DropdownMenu>
