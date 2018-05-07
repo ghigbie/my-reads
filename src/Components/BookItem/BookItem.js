@@ -19,27 +19,12 @@ const BookItem = (props) => (
             </div>
             <div className="btn-bottom">
                 <BookModal title={props.title}
-                   authors={props.authors}
-                   image={props.image}
-                   description={props.description}
-                   id={props.id}
-                   shelf={props.shelf}/>
+                           authors={props.authors}
+                           image={props.image}
+                           description={props.description}
+                           id={props.id}
+                          shelf={props.shelf}/>
             </div>
-            
-            <button type="button" 
-                    className="btn btn-outline-primary btn-bottom" 
-                    data-toggle="modal" 
-                    data-target={`#${props.id}`}>
-                    More Information
-            </button>
-           {/* <NavLink to={`/details/${props.id}`} 
-                     className="btn btn-outline-primary btn-bottom">More Information</NavLink> */}
-            <BookModal title={props.title}
-                   authors={props.authors}
-                   image={props.image}
-                   description={props.description}
-                   id={props.id}
-                   shelf={props.shelf}/>
         </div>
     </div>
 );

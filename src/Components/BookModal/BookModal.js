@@ -21,9 +21,9 @@ class BookModal extends Component{
   render() {
     return (
       <div>
-        <Button color="danger" className="btn -btn-outline-primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <Button className="btn btn-outline-primary btn-bottom" onClick={this.toggle}>More Information</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>{this.props.title}</ModalHeader>
+          <ModalHeader toggle={this.toggle}>{this.props.title} by {this.props.authors}</ModalHeader>
           <ModalBody>{this.props.description}</ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
