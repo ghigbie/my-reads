@@ -14,8 +14,7 @@ const BookItem = (props) => (
             <h5 className="card-title by-line by-line">{`By ${props.authors}`}</h5>
             <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
-                <DropdownButton uniqueID={props.id}
-                                sectionTitles={props.sectionTitles}/>
+                <DropdownButton sectionTitles={props.sectionTitles}/>
             </div>
             <div className="btn-bottom">
                 <BookModal title={props.title}

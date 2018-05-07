@@ -21,6 +21,10 @@ class DropdownButton extends Component{
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+  
+  static propTypes = {
+      sectionTitles: PropTypes.array.isRequired
+  }
 
   render() {
     return (
@@ -41,11 +45,5 @@ class DropdownButton extends Component{
     );
   }
 }
-
-
-DropdownButton.propTypes = {
-  uniqueID: PropTypes.string.isRequired,
-  sectionTitles: PropTypes.array.isRequired
-};
 
 export default DropdownButton;
