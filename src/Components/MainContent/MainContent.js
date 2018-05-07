@@ -12,7 +12,8 @@ const MainContent = (props) => (
                              heading={title.heading}
                              shelfCategory={title.shelfCategory}
                              books={props.books}
-                             sectionTitles={props.sectionTitles}/>);
+                             sectionTitles={props.sectionTitles}
+                             changeShelf={props.changeShelf}/>);
         })}
         <div>
         <NavLink to="/add" className="book-adder"/>

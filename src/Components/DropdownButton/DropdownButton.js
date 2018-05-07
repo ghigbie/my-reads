@@ -22,6 +22,10 @@ class DropdownButton extends Component{
     });
   }
   
+  handleChoice(){
+    alert('Yeah!');
+  }
+  
   static propTypes = {
       sectionTitles: PropTypes.array.isRequired
   }
@@ -36,11 +40,11 @@ class DropdownButton extends Component{
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
-          <DropdownItem onClick={() => this.props.handleChangeShelf(this.props.sectionTitles[0].shelfCategory)}>
+          <DropdownItem onClick={this.handleChoice}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
-          <DropdownItem onClick={() => this.props.handleChangeShelf(this.props.sectionTitles[1].shelfCategory)}>
+          <DropdownItem onClick={(e) => this.props.changeShelf}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
-          <DropdownItem onClick={() => this.props.handleChangeShelf(this.props.sectionTitles[2].shelfCategory)}>
+          <DropdownItem onClick={(e) => this.props.changeShelf}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
           <DropdownItem>None</DropdownItem>
         </DropdownMenu>

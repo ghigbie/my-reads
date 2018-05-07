@@ -22,7 +22,8 @@ const BookItem = (props) => (
                            image={props.image}
                            description={props.description}
                            id={props.id}
-                          shelf={props.shelf}/>
+                           shelf={props.shelf}
+                           changeShelf={props.changeShelf}/>
             </div>
         </div>
     </div>

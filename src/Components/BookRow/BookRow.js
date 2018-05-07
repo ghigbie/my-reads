@@ -27,7 +27,8 @@ class BookRow extends Component{
                                               description={book.description}
                                               id={book.id}
                                               shelf={book.shelf}
-                                              sectionTitles={this.props.sectionTitles}/>);
+                                              sectionTitles={this.props.sectionTitles}
+                                              changeShelf={this.props.changeShelf}/>);
                     })}
                 </div>
             </div>

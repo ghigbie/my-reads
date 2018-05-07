@@ -26,6 +26,10 @@ class MyReadsApp extends Component {
       });
   }
   
+  handleChangeShelf(e){
+    alert('Handle change shelf called');
+  }
+  
   render() {
     return (
         <div>
@@ -34,7 +38,8 @@ class MyReadsApp extends Component {
             <Switch>
               <Route path="/" exact render={() => (
                 <MainContent sectionTitles={starterData.sectionTitles}
-                             books={this.state.books}/>)} />
+                             books={this.state.books}
+                             changeShelf={this.handleChangeShelf}/>)} />
               <Route path="/add" component={AddBook} />
               <Route path="/search" component={SearchPage} />
               <Route path="*" component={NotFound} />
