@@ -1,29 +1,47 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import './DropdownButton.css';
 import PropTypes from 'prop-types';
 
-const DropdownButton = (props) => (
-    <div className="dropdown">
-        <button className="book-shelf-changer" 
-                type="button" 
-                id={props.uniqueID}
-                data-toggle="dropdown" 
-                aria-haspopup="true">
-        </button>
-        <div className="dropdown-menu" 
-             aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" 
-               href="#">Action</a>
-            <a className="dropdown-item" 
-               href="#">Another action</a>
-            <a className="dropdown-item"
-               href="#">Something else here</a>
-        </div>
-    </div>
-);
+class DropdownButton extends Component{
+  constructor(props) {
+    super(props);
 
-DropdownButton.propTypes = {
-  uniqueID: PropTypes.string.isRequired  
-};
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  render() {
+    return (
+      <ButtonDropdown isOpen={this.state.dropdownOpen} 
+                      toggle={this.toggle}
+                      className="book-shelf-changer">
+        <DropdownToggle caret>
+          Button Dropdown
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem disabled>Action</DropdownItem>
+          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Another Action</DropdownItem>
+        </DropdownMenu>
+      </ButtonDropdown>
+    );
+  }
+}
+
+
+// DropdownButton.propTypes = {
+//   uniqueID: PropTypes.string.isRequired  
+// };
 
 export default DropdownButton;
