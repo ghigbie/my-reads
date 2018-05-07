@@ -11,6 +11,9 @@ class DropdownButton extends Component{
     this.state = {
       dropdownOpen: false
     };
+    this.forcedStyle = {
+          borderRadius: '50%',
+        };
   }
 
   toggle() {
@@ -22,9 +25,8 @@ class DropdownButton extends Component{
   render() {
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} 
-                      toggle={this.toggle}
-                      className="book-shelf-changer">
-        <DropdownToggle caret>
+                      toggle={this.toggle}>
+        <DropdownToggle color="primary" style={this.forcedStyle} className="book-shelf-changer">
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to..</DropdownItem>
