@@ -18,6 +18,7 @@ class BookItem extends Component{
                     <p className="card-text book-description">{`${this.props.description.substring(0, 188)}...`}</p>
                     <div className="btn-bottom-right">
                         <DropdownButton sectionTitles={this.props.sectionTitles}
+                                        id={this.props.id}
                                         shelf={this.props.shelf}
                                         changeShelf={this.props.changeShelf}/>
                     </div>

@@ -43,7 +43,7 @@ class DropdownButton extends Component{
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
           
-          <DropdownItem value={this.props.sectionTitles[0].shelfCategory}
+          <DropdownItem value={{category: this.props.sectionTitles[0].shelfCategory, id: this.props.id}}
                         onClick={this.props.changeShelf}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
                         

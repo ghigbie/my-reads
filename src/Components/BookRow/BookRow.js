@@ -12,12 +12,12 @@ class BookRow extends Component{
         sectionTitles: PropTypes.array.isRequired
     }
     
+    
     render(){
         return(
             <div>
                 <h4 className="shelf-title">{this.props.heading}</h4>
                 <div className="books-container row">
-                {console.log(this.props.sectionTitles)}
                     {this.props.books.filter((book) => 
                         book.shelf === this.props.shelfCategory).map((book) => {
                             return (<BookItem key={book.id}
