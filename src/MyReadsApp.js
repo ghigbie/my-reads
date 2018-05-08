@@ -16,9 +16,11 @@ class MyReadsApp extends Component {
   constructor(props){
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);    
     
     this.state = {
-      books: []
+      books: [],
+      activeIndex: undefined
     };
   }
   
@@ -34,6 +36,10 @@ class MyReadsApp extends Component {
     alert('Handle change shelf called');
     let targetShelf = e.currentTarget.value;
     console.log(e.currentTarget.value);
+    console.log('Target: ', e.target);
+    console.log('currentTarget: ', e.currentTarget);
+    let indexPass = e.index;
+    console.log(indexPass);
     // this.setState((prevState) => ({
     //   books: prevState.books.filter
     // })
