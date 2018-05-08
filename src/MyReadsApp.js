@@ -13,9 +13,13 @@ import SearchPage from './Routes/SearchPage/SearchPage';
 import NotFound from './Routes/NotFound/NotFound';
 
 class MyReadsApp extends Component {
-  
-  state = {
-    books: []
+  constructor(props){
+    super(props);
+    this.handleChangeShelf = this.handleChangeShelf.bind(this);
+    
+    this.state = {
+      books: []
+    };
   }
   
   componentDidMount(){
@@ -29,19 +33,18 @@ class MyReadsApp extends Component {
   handleChangeShelf(e){
     alert('Handle change shelf called');
     let targetShelf = e.currentTarget.value;
-    alert(targetShelf);
-    console.log(e.currentTarget.value.toString());
+    console.log(e.currentTarget.value);
     // this.setState((prevState) => ({
     //   books: prevState.books.filter
     // })
-    BookAPI.update(targetShelf) //Book needs to be passed here
+    BookAPI.update(this.state.books[0], targetShelf) //Book needs to be passed here
       .then((response) => {
       console.log(response);
     });
     BookAPI.getAll()
       .then((booksRequested) => {
         this.setState(() => ({books: booksRequested }));
-        console.log("After update: ", this.state.books);
+        console.log('After update: ', this.state.books);
       });
 
   }

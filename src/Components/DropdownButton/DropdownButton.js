@@ -24,10 +24,6 @@ class DropdownButton extends Component{
     });
   }
   
-  handleChoice(){
-    alert('Yeah!');
-  }
-  
   static propTypes = {
       sectionTitles: PropTypes.array.isRequired
   }
