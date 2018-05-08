@@ -38,8 +38,8 @@ class MyReadsApp extends Component {
     console.log(e.currentTarget.value);
     console.log('Target: ', e.target);
     console.log('currentTarget: ', e.currentTarget);
-    let indexPass = e.index;
-    console.log(indexPass);
+    // let indexPass = e.index;
+    // console.log(indexPass);
     // this.setState((prevState) => ({
     //   books: prevState.books.filter
     // })

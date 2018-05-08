@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BackArrow from './../Components/BackArrow/BackArrow';
+import BackArrow from './../../Components/BackArrow/BackArrow';
 
 const SearchPage = () => (
     <div>
