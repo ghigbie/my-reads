@@ -38,7 +38,7 @@ class BookModal extends Component{
           <ModalHeader toggle={this.toggle}>{this.props.title} by {this.props.authors}</ModalHeader>
           <img className='modal-book-image' 
                src={this.props.image} 
-               alt={`Image of ${this.props.title} by ${this.props.authors}`}/>
+               alt={`The book ${this.props.title} by ${this.props.authors}`}/>
           <ModalBody>{this.props.description}</ModalBody>
           <ModalFooter>
             <Button color="secondary" 

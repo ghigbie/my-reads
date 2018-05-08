@@ -34,6 +34,10 @@ class MyReadsApp extends Component {
     // this.setState((prevState) => ({
     //   books: prevState.books.filter
     // })
+    BookAPI.update(targetShelf) //Book needs to be passed here
+      .then((response) => {
+      console.log(response);
+    });
     BookAPI.getAll()
       .then((booksRequested) => {
         this.setState(() => ({books: booksRequested }));
