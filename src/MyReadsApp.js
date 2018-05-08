@@ -30,9 +30,12 @@ class MyReadsApp extends Component {
     alert('Handle change shelf called');
     let targetShelf = e.currentTarget.value;
     alert(targetShelf);
+    console.log(e.currentTarget.value.toString());
     // this.setState((prevState) => ({
     //   books: prevState.books.filter
     // })
+    
+
   }
   
   render() {
