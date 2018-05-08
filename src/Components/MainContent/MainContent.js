@@ -7,13 +7,13 @@ import BookRow from './../BookRow/BookRow';
 
 const MainContent = (props) => (
             <div className="custom-container">
-                {this.props.sectionTitles.map((title, index) => {
+                {props.sectionTitles.map((title, index) => {
                     return (<BookRow key={index} 
                                      heading={title.heading}
                                      shelfCategory={title.shelfCategory}
-                                     books={this.props.books}
-                                     sectionTitles={this.props.sectionTitles}
-                                     changeShelf={this.props.changeShelf}/>);
+                                     books={props.books}
+                                     sectionTitles={props.sectionTitles}
+                                     changeShelf={props.changeShelf}/>);
                 })}
                 <div>
                 <NavLink to="/add" className="book-adder"/>
