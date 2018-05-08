@@ -5,20 +5,7 @@ import './MainContent.css';
 
 import BookRow from './../BookRow/BookRow';
 
-class MainContent extends Component{ 
-    
-    state = {
-        currentReads: this.props.books,
-        wantReads: this.props.books,
-        doneReads: this.props.books
-    }
-    
-    componentDidMount(){
-        
-    }
-    
-    render(){
-        return(
+const MainContent = (props) => (
             <div className="custom-container">
                 {this.props.sectionTitles.map((title, index) => {
                     return (<BookRow key={index} 
@@ -32,13 +19,11 @@ class MainContent extends Component{
                 <NavLink to="/add" className="book-adder"/>
                 </div>
             </div>
-    
         );
-    }
-}
 
-// MainContent.propTypes = {
-//     sectionTitles: PropTypes.array.isRequired,
-//     books: PropTypes.array.isRequired
-// };
+
+MainContent.propTypes = {
+    sectionTitles: PropTypes.array.isRequired,
+    books: PropTypes.array.isRequired
+};
 export default MainContent;
