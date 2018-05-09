@@ -37,11 +37,11 @@ class MyReadsApp extends Component {
     const targetShelf = selectedBook[1] //This is the shelf that the book should move to, which was on the second element of the array
     const targetBook = this.state.books.filter((book) => book.id === targetID); //This is an array with the book that is to be changed
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
-    let newBooksArray = this.state.books;
-    newBooksArray[targetBookIndex].shelf = targetShelf;
-    console.log("Change shelf :", newBooksArray);
-    this.setState(() => ({books: newBooksArray}));
-    BookAPI.update(targetBook[0], targetShelf)
+    targetBook[0].shelf = targetShelf;
+    let newBooksArray = this.state.books; //This is the original array. 
+    newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
+    this.setState(() => ({books: newBooksArray})); //This sets the state of the books item in state.
+    BookAPI.update(targetBook[0], targetShelf) //This updates the data base
       .then((response) => {
     });
   }
