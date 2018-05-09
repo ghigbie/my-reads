@@ -3,7 +3,7 @@ import React from 'react';
 import BackArrow from './../../Components/BackArrow/BackArrow';
 
 const SearchPage = () => (
-    <div>
+    <div className="container">
         This is the search page
         <BackArrow />
         <form onSubmit={``}>
