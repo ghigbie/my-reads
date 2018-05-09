@@ -34,7 +34,7 @@ class MyReadsApp extends Component {
   handleChangeShelf(e){
     const selectedBook = e.currentTarget.value.split(','); //This gets the object an turns it into an array
     const targetID = selectedBook[0]; //This is the value of the ID, which was on the first item on the array
-    const targetShelf = selectedBook[1] //This is the shelf that the book should move to, which was on the second element of the array
+    const targetShelf = selectedBook[1]; //This is the shelf that the book should move to, which was on the second element of the array
     const targetBook = this.state.books.filter((book) => book.id === targetID); //This is an array with the book that is to be changed
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
     targetBook[0].shelf = targetShelf;
