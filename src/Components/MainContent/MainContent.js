@@ -16,7 +16,10 @@ const MainContent = (props) => (
                                      changeShelf={props.changeShelf}/>);
                 })}
                 <div>
-                <NavLink to="/add" className="book-adder"/>
+                    <NavLink to="/search" className="book-search" />
+                </div>
+                <div>
+                    <NavLink to="/add" className="book-adder"/>
                 </div>
             </div>
         );
