@@ -38,19 +38,20 @@ class MyReadsApp extends Component {
     const targetBook = this.state.books.filter((book) => book.id === targetID); //This is an array with the book that is to be changed
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
     let newBooksArray = this.state.books;
-    newBooksArray[targetBookIndex] = targetBook[0];
-    this.setState(() => {books: newBooksArray});
-    console.log("After first update: ", this.state.books);
+    newBooksArray[targetBookIndex].shelf = targetShelf;
+    console.log("Change shelf :", newBooksArray);
+    this.setState(() => ({books: newBooksArray}));
+    // console.log("After first update: ", this.state.books);
     
     BookAPI.update(targetBook[0], targetShelf)
       .then((response) => {
-      console.log(response);
+      // console.log(response);
     });
-    BookAPI.getAll()
-      .then((booksRequested) => {
-        this.setState(() => ({books: booksRequested }));
-        console.log('After update: ', this.state.books);
-    });
+    // BookAPI.getAll()
+    //   .then((booksRequested) => {
+    //     this.setState(() => ({books: booksRequested }));
+    //     // console.log('After update: ', this.state.books);
+    // });
 
   }
   
