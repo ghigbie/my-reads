@@ -40,7 +40,7 @@ class MyReadsApp extends Component {
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID);
     console.log(targetBook);
     let newBooksArray = this.state.books;
-    newBooksArray[targetBookIndex] = targetBook;
+    newBooksArray[targetBookIndex] = targetBook[0];
     this.setState(() => {books: newBooksArray});
     console.log("After first update: ", this.state.books);
     BookAPI.update(this.state.books[targetBookIndex], targetShelf) //Book needs to be passed here
