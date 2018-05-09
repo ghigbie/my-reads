@@ -34,16 +34,18 @@ class MyReadsApp extends Component {
   
   handleChangeShelf(e){
     alert('Handle change shelf called');
-    let targetShelf = e.currentTarget.value;
-    console.log(e.currentTarget.value);
-    console.log('Target: ', e.target);
-    console.log('currentTarget: ', e.currentTarget);
-    // let indexPass = e.index;
-    // console.log(indexPass);
-    // this.setState((prevState) => ({
-    //   books: prevState.books.filter
-    // })
-    BookAPI.update(this.state.books[0], targetShelf) //Book needs to be passed here
+    const selectedBook = e.currentTarget.value.split(',');
+    const targetID = selectedBook[0];
+    const targetShelf = selectedBook[1]
+    console.log(e.currentTarget.value.split(','));
+    console.log(targetID);
+    console.log(targetShelf);
+    const targetBook = this.state.books.filter((book) => book.id === targetID);
+    const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID);
+    console.log(targetBook);
+    alert(targetBookIndex);
+   // this.setState((prevState) => ({books: prevState.books.}))
+    BookAPI.update(this.state.books[targetBookIndex], targetShelf) //Book needs to be passed here
       .then((response) => {
       console.log(response);
     });
