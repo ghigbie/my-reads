@@ -1,3 +1,10 @@
-<svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="120px" height="120px" viewbox="0 0 120 120"
+preserveAspectRatio="none">
+<g transform="translate(10,10)">
+<path d="m50,0 L50,100 M0,50 L100,50" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" /> 
+</g>
 </svg>
+
