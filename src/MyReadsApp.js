@@ -33,18 +33,16 @@ class MyReadsApp extends Component {
   }
   
   handleChangeShelf(e){
-    alert('Handle change shelf called');
     const selectedBook = e.currentTarget.value.split(',');
     const targetID = selectedBook[0];
     const targetShelf = selectedBook[1]
-    console.log(e.currentTarget.value.split(','));
-    console.log(targetID);
-    console.log(targetShelf);
     const targetBook = this.state.books.filter((book) => book.id === targetID);
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID);
     console.log(targetBook);
-    alert(targetBookIndex);
-   // this.setState((prevState) => ({books: prevState.books.}))
+    let newBooksArray = this.state.books;
+    newBooksArray[targetBookIndex] = targetBook;
+    this.setState(() => {books: newBooksArray});
+    console.log("After first update: ", this.state.books);
     BookAPI.update(this.state.books[targetBookIndex], targetShelf) //Book needs to be passed here
       .then((response) => {
       console.log(response);
