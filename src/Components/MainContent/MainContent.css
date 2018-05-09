@@ -27,4 +27,5 @@
 
 .book-search{
   bottom: 160px;
+  background-image: url('./../../icons/search-icon.svg');
 }
