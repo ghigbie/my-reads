@@ -46,6 +46,12 @@ class MyReadsApp extends Component {
     });
   }
   
+  handleAddBook(e){
+    alert('handleAddBook called');
+    const bookToAdd = 'stuff';
+    this.setState((prevState) => ({books: prevState.books.concat(bookToAdd)}));
+  }
+  
   render() {
     return (
         <div>
