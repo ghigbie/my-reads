@@ -16,6 +16,7 @@ class MyReadsApp extends Component {
   constructor(props){
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
+    this.handleAddBook  = this.handleAddBook.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);    
     
     this.state = {
@@ -62,7 +63,9 @@ class MyReadsApp extends Component {
                 <MainContent sectionTitles={starterData.sectionTitles}
                              books={this.state.books}
                              changeShelf={this.handleChangeShelf}/>)} />
-              <Route path="/add" component={AddBook} />
+              <Route path="/add" 
+                     component={AddBook} 
+                     addBook={this.handleAddBook}/>
               <Route path="/search" component={SearchPage} />
               <Route path="*" component={NotFound} />
             </Switch>
