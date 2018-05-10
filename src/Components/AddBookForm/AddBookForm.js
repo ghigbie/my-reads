@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import serializeForm from 'form-serialize';
 import './AddBookForm.css';
 
 class AddBookForm extends Component{
+    static propTypes = {
+        addBook: PropTypes.addBook.isRequired
+    }
+    
     handleSubmit = (e) =>{
         e.preventDefault();
         const values = serializeForm(e.target, {hash: true});
