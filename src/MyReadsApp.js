@@ -43,14 +43,17 @@ class MyReadsApp extends Component {
     newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
     this.setState(() => ({books: newBooksArray})); //This sets the state of the books item in state.
     BookAPI.update(targetBook[0], targetShelf) //This updates the data base
-      .then((response) => {
-    });
+      .then((response) => {});
   }
   
   handleAddBook(e){
     alert('handleAddBook called');
     const bookToAdd = 'stuff';
+    const targetShelf = 'read';
     this.setState((prevState) => ({books: prevState.books.concat(bookToAdd)}));
+    
+    BookAPI.update(bookToAdd, targetShelf)
+      .then((response) => {});
   }
   
   render() {
