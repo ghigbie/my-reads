@@ -23,8 +23,7 @@ const MainContent = (props) => (
                 </div>
             </div>
         );
-
-
+        
 MainContent.propTypes = {
     sectionTitles: PropTypes.array.isRequired,
     books: PropTypes.array.isRequired

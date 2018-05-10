@@ -5,7 +5,7 @@ import './AddBookForm.css';
 
 class AddBookForm extends Component{
     static propTypes = {
-        addBook: PropTypes.addBook.isRequired
+        addBook: PropTypes.func.isRequired
     }
     
     handleSubmit = (e) =>{
