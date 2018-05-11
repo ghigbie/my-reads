@@ -20,7 +20,7 @@ const SearchPage = (props) => (
                                                   description={book.description}
                                                   id={book.id}
                                                   shelf={book.shelf}
-                                                  sectionTittles={props.sectionTitles}
+                                                  sectionTitles={props.sectionTitles}
                                                   changeShelf={props.changeShelf}/>))}
         </div>
     </div>
@@ -28,7 +28,7 @@ const SearchPage = (props) => (
 
 SearchPage.propTypes = {
     books: PropTypes.array.isRequired,
-    searchBooks: PropTypes.func.isRequired
+    searchBooks: PropTypes.func.isRequired,
 };
 
 export default SearchPage;

@@ -12,7 +12,6 @@ class BookRow extends Component{
         sectionTitles: PropTypes.array.isRequired
     }
     
-    
     render(){
         return(
             <div>
