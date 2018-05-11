@@ -20,7 +20,7 @@ const SearchPage = (props) => (
                                                   description={book.description}
                                                   id={book.id}
                                                   shelf={book.shelf}
-                                                  sectionTitltles={this.props.sectionTitles}
+                                                  sectionTittles={this.props.sectionTitles}
                                                   changeShelf={this.props.changeShelf}/>))}
         </div>
     </div>
