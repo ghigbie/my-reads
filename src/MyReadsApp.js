@@ -17,6 +17,7 @@ class MyReadsApp extends Component {
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
     this.handleAddBook  = this.handleAddBook.bind(this);
+    this.handleSearchBooks = this.handleSearchBooks(this);
     this.componentDidMount = this.componentDidMount.bind(this);    
     
     this.state = {
@@ -46,14 +47,18 @@ class MyReadsApp extends Component {
       .then((response) => {});
   }
   
-  handleAddBook(e){
+  handleAddBook(book){
     alert('handleAddBook called');
     const bookToAdd = 'stuff';
     const targetShelf = 'read';
-    this.setState((prevState) => ({books: prevState.books.concat(bookToAdd)}));
+    this.setState((prevState) => ({books: prevState.books.concat(book)}));
     
-    BookAPI.update(bookToAdd, targetShelf)
+    BookAPI.update(book, targetShelf)
       .then((response) => {});
+  }
+  
+  handleSearchBooks(e){
+    
   }
   
   render() {
@@ -71,7 +76,8 @@ class MyReadsApp extends Component {
                      addBook={this.handleAddBook}/>
               <Route path="/search" 
                      component={SearchPage} 
-                     books={this.state.books}/>
+                     books={this.state.books}
+                     searchBooks={this.handleSearchBooks}/>
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>

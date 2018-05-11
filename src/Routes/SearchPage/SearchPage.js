@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import BackArrow from './../../Components/BackArrow/BackArrow';
+import BookItem  from './../../Components/BookItem/BookItem';
 
 const SearchPage = (props) => (
     <div className="container">
@@ -9,8 +10,19 @@ const SearchPage = (props) => (
         <BackArrow />
         <form onSubmit={props.searchBooks}>
             <input type="text" name="search" />
-            
         </form>
+        
+        <div className="book-display">
+            {props.books.map((book) => (<BookItem key={book.id}
+                                                  title={book.title}
+                                                  authors={book.authors}
+                                                  image={book.imageLinks.thumbnail}
+                                                  description={book.description}
+                                                  id={book.id}
+                                                  shelf={book.shelf}
+                                                  sectionTitltles={this.props.sectionTitles}
+                                                  changeShelf={this.props.changeShelf}/>))}
+        </div>
     </div>
 );
 
