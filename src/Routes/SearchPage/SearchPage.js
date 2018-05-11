@@ -27,8 +27,8 @@ const SearchPage = (props) => (
 );
 
 SearchPage.propTypes = {
-    books: PropTypes.array.isRequired,
-    searchBooks: PropTypes.func.isRequired,
+    books: PropTypes.array.isRequired
+    //searchBooks: PropTypes.func.isRequired,
 };
 
 export default SearchPage;

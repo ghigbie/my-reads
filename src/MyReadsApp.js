@@ -58,7 +58,7 @@ class MyReadsApp extends Component {
   }
   
   handleSearchBooks(e){
-    
+    alert('HandleSearchBooks called! Yeah!')
   }
   
   render() {
