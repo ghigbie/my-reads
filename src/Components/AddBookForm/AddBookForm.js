@@ -12,6 +12,9 @@ class AddBookForm extends Component{
         e.preventDefault();
         const values = serializeForm(e.target, {hash: true});
         console.log('Values: ', values);
+        if(this.props.addBook){
+            this.props.addBook(values);
+        }
     }
     
     render(){
