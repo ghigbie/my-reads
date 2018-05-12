@@ -7,3 +7,15 @@
     justify-content: space-around;
 }
 
+.showing-books{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.showing-books button{
+    color: blue;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+}
