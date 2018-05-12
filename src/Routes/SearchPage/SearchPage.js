@@ -27,18 +27,14 @@ class SearchPage extends Component{
     clearQuery = () => this.updateQuery('')
     
     render(){
-        const { query } = this.state;
         const { books } = this.props;
-        const searchingBooks = query === '' //This varibale filters the list of books
-            ? books 
-            : books.filter((book) => (
-                book.title.toLowerCase().includes(query.toLowerCase())));
-           // || book.authors.toString().toLowercase().includes(this.state.query.toLowercase()));
+        const filteredBooks = this.state.query === '' ? books //This varibale filters the list of books
+            : books.filter((book) => (  //This funciton filters the books by title
+                book.title.toLowerCase().includes(this.state.query.toLowerCase()))
+                || book.authors.toString().toLowerCase().includes(this.state.query.toLowerCase()));
 
         return(
             <div className="container">
-                {this.state.query}
-        
                 <BackArrow />
                 <form onSubmit={this.props.searchBooks}>
                     <input type="text" 
@@ -50,11 +46,11 @@ class SearchPage extends Component{
                 </form>
                 
                 <div className="book-display search-container">
-                    {books.map((book) => (<BookItem key={book.id}
-                                                    title={book.title}
-                                                    authors={book.authors}
-                                                    image={book.imageLinks.thumbnail}
-                                                    description={book.description}
+                    {filteredBooks.map((book) => (<BookItem key={book.id}
+                                                             title={book.title}
+                                                             authors={book.authors}
+                                                             image={book.imageLinks.thumbnail}
+                                                            description={book.description}
                                                     id={book.id}
                                                     shelf={book.shelf}
                                                     sectionTitles={this.props.sectionTitles}
