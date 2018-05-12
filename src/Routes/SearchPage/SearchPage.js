@@ -27,6 +27,10 @@ class SearchPage extends Component{
     clearQuery = () => this.updateQuery('')
     
     render(){
+        
+        const searchingBooks = this.state.query === '' ? this.state.books :   //This varibale filters the list of books
+            this.state.books.filter((book) => book.title.toLowercase().includes(this.state.query.toLowercase())
+            || book.authors.toString().toLowercase().includes(this.state.query.toLowercase()));
 
         return(
             <div className="container">
