@@ -46,6 +46,12 @@ class SearchPage extends Component{
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
                 
+                {filteredBooks.length !==  books.length &&
+                    <div>
+                        Where's your puppy?
+                    </div>
+                }
+                
                 <div className="book-display search-container">
                     {filteredBooks.map((book) => (<BookItem key={book.id}
                                                             title={book.title}
