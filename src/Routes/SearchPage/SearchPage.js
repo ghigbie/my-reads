@@ -29,9 +29,9 @@ class SearchPage extends Component{
     render(){
         const { books } = this.props;
         const filteredBooks = this.state.query === '' ? books //This varibale filters the list of books
-            : books.filter((book) => (  //This funciton filters the books by title
-                book.title.toLowerCase().includes(this.state.query.toLowerCase()))
-                || book.authors.toString().toLowerCase().includes(this.state.query.toLowerCase()));
+            : books.filter((book) => (  //This funciton filters the books by title and author
+                book.title.toLowerCase().includes(this.state.query.toLowerCase())) //this line filters by title
+                || book.authors.toString().toLowerCase().includes(this.state.query.toLowerCase())); //this line filters by title
 
         return(
             <div className="container">
@@ -47,14 +47,14 @@ class SearchPage extends Component{
                 
                 <div className="book-display search-container">
                     {filteredBooks.map((book) => (<BookItem key={book.id}
-                                                             title={book.title}
-                                                             authors={book.authors}
-                                                             image={book.imageLinks.thumbnail}
+                                                            title={book.title}
+                                                            authors={book.authors}
+                                                            image={book.imageLinks.thumbnail}
                                                             description={book.description}
-                                                    id={book.id}
-                                                    shelf={book.shelf}
-                                                    sectionTitles={this.props.sectionTitles}
-                                                    changeShelf={this.props.changeShelf}/>))}
+                                                            id={book.id}
+                                                            shelf={book.shelf}
+                                                            sectionTitles={this.props.sectionTitles}
+                                                            changeShelf={this.props.changeShelf}/>))}
                 </div>
             </div>);
     }
