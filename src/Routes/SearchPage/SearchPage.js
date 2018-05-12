@@ -21,7 +21,7 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         console.log('updateQuery Called');
-        this.setState(() => {{query: query.trim()}});
+        this.setState(() => ({query: query.trim()}));
     }
     
     clearQuery = () => this.updateQuery('')
