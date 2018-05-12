@@ -15,8 +15,7 @@ class SearchPage extends Component{
     }
     
     static propTypes = {
-        books: PropTypes.array.isRequired,
-        searchBooks: PropTypes.function.isRequired
+        books: PropTypes.array.isRequired
     }
     
     render(){

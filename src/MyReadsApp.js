@@ -76,8 +76,7 @@ class MyReadsApp extends Component {
                      addBook={this.handleAddBook}/>
               <Route path="/search" render={() => (
                 <SearchPage books={this.state.books}
-                            sectionTitles={starterData.sectionTitles}
-                            searchBooks={this.handleSearchBooks}/>)} />
+                            sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>
             <Footer footerText={starterData.footerText}/>
