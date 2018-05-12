@@ -20,7 +20,6 @@ class SearchPage extends Component{
     }
     
     updateQuery = (query) => {
-        console.log('updateQuery Called');
         this.setState(() => ({query: query.trim()}));
     }
     
@@ -48,7 +47,7 @@ class SearchPage extends Component{
                 {filteredBooks.length !== books.length &&
                     <div className="showing-books">
                         <span>Now showing {filteredBooks.length} of {books.length}</span>
-                        <button onClick={(event) => this.clearQuery}>Clear Search</button>
+                        <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
                 <div className="book-display search-container">
