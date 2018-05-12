@@ -28,13 +28,18 @@ class SearchPage extends Component{
     
     render(){
         const { query } = this.state;
-        const searchingBooks = this.state.query === '' ? this.state.books :   //This varibale filters the list of books
-            this.state.books.filter((book) => book.title.toLowercase().includes(this.state.query.toLowercase())
-            || book.authors.toString().toLowercase().includes(this.state.query.toLowercase()));
+        const { books } = this.props;
+        const searchingBooks = query === '' //This varibale filters the list of books
+            ? books 
+            : books.filter((book) => (
+                book.title.toLowercase().includes(query.toLowercase()))
+                );
+           // || book.authors.toString().toLowercase().includes(this.state.query.toLowercase()));
 
         return(
             <div className="container">
                 {this.state.query}
+        
                 <BackArrow />
                 <form onSubmit={this.props.searchBooks}>
                     <input type="text" 
@@ -46,27 +51,15 @@ class SearchPage extends Component{
                 </form>
                 
                 <div className="book-display search-container">
-                    {this.props.books.filter((book) => book.title === this.state.query).map(
-                        (book) => (<BookItem key={book.id}
-                                                          title={book.title}
-                                                          authors={book.authors}
-                                                          image={book.imageLinks.thumbnail}
-                                                          description={book.description}
-                                                          id={book.id}
-                                                          shelf={book.shelf}
-                                                          sectionTitles={this.props.sectionTitles}
-                                                          changeShelf={this.props.changeShelf}/>))}
-                        
-                    
-                    {this.props.books.map((book) => (<BookItem key={book.id}
-                                                          title={book.title}
-                                                          authors={book.authors}
-                                                          image={book.imageLinks.thumbnail}
-                                                          description={book.description}
-                                                          id={book.id}
-                                                          shelf={book.shelf}
-                                                          sectionTitles={this.props.sectionTitles}
-                                                          changeShelf={this.props.changeShelf}/>))}
+                    {books.map((book) => (<BookItem key={book.id}
+                                                    title={book.title}
+                                                    authors={book.authors}
+                                                    image={book.imageLinks.thumbnail}
+                                                    description={book.description}
+                                                    id={book.id}
+                                                    shelf={book.shelf}
+                                                    sectionTitles={this.props.sectionTitles}
+                                                    changeShelf={this.props.changeShelf}/>))}
                 </div>
             </div>);
     }
