@@ -44,14 +44,12 @@ class SearchPage extends Component{
                            placeholder="Search Books"
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
-                    {filteredBooks.length !== books.length &&
-                        <div className="showing-books">
-                            <p>Now showing {filteredBooks.length} of {books.length}</p>
-                            <button>Clear Search</button>
-                        </div>
-                    }
-                    
                 </form>
+                {filteredBooks.length !== books.length &&
+                    <div className="showing-books">
+                        <span>Now showing {filteredBooks.length} of {books.length}</span>
+                        <button onClick={(event) => this.clearQuery}>Clear Search</button>
+                    </div>}
                 
                 <div className="book-display search-container">
                     {filteredBooks.map((book) => (<BookItem key={book.id}
