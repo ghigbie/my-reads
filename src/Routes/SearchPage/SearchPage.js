@@ -32,8 +32,7 @@ class SearchPage extends Component{
         const searchingBooks = query === '' //This varibale filters the list of books
             ? books 
             : books.filter((book) => (
-                book.title.toLowercase().includes(query.toLowercase()))
-                );
+                book.title.toLowerCase().includes(query.toLowerCase())));
            // || book.authors.toString().toLowercase().includes(this.state.query.toLowercase()));
 
         return(
