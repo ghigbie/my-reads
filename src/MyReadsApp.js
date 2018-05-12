@@ -17,7 +17,6 @@ class MyReadsApp extends Component {
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
     this.handleAddBook  = this.handleAddBook.bind(this);
-    this.handleSearchBooks = this.handleSearchBooks(this);
     this.componentDidMount = this.componentDidMount.bind(this);    
     
     this.state = {
@@ -55,10 +54,6 @@ class MyReadsApp extends Component {
     
     BookAPI.update(book, targetShelf)
       .then((response) => {});
-  }
-  
-  handleSearchBooks(e){
-    console.log('HandleSearchBooks called! Yeah!');
   }
   
   render() {
