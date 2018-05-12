@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './SearchPage.css';
 
 import BackArrow from './../../Components/BackArrow/BackArrow';
 import BookItem  from './../../Components/BookItem/BookItem';
@@ -27,8 +28,8 @@ const SearchPage = (props) => (
 );
 
 SearchPage.propTypes = {
-    books: PropTypes.array.isRequired
-    //searchBooks: PropTypes.func.isRequired,
+    books: PropTypes.array.isRequired,
+    searchBooks: PropTypes.func.isRequired
 };
 
 export default SearchPage;
