@@ -1,0 +1,9 @@
+.search-container{
+    padding: 2% 2% 2% 2%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+

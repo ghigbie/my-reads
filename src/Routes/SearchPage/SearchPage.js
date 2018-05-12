@@ -13,7 +13,7 @@ const SearchPage = (props) => (
             <input type="text" name="search" />
         </form>
         
-        <div className="book-display">
+        <div className="book-display search-container">
             {props.books.map((book) => (<BookItem key={book.id}
                                                   title={book.title}
                                                   authors={book.authors}
@@ -29,7 +29,7 @@ const SearchPage = (props) => (
 
 SearchPage.propTypes = {
     books: PropTypes.array.isRequired,
-    searchBooks: PropTypes.func.isRequired
+    searchBooks: PropTypes.func.isRequired 
 };
 
 export default SearchPage;
