@@ -11,7 +11,7 @@ class SearchPage extends Component{
         this.updateQuery = this.updateQuery.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
         this.state = {
-            query: 'react'
+            query: ''
         };
     }
     
@@ -27,23 +27,22 @@ class SearchPage extends Component{
     clearQuery = () => this.updateQuery('')
     
     render(){
-        const { query } = this.state;
-        const { books } = this.props;
+
         return(
             <div className="container">
-                This is the search page
+                {this.state.query}
                 <BackArrow />
                 <form onSubmit={this.props.searchBooks}>
                     <input type="text" 
                            name="search"
                            className="form-control"
-                           placeHolder="Search Books"
+                           placeholder="Search Books"
                            value={this.state.query}
-                           onChange={true}/>
+                           onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
                 
                 <div className="book-display search-container">
-                    {this.props.books.filter((book) => book.title === query).map(
+                    {this.props.books.filter((book) => book.title === this.state.query).map(
                         (book) => (<BookItem key={book.id}
                                                           title={book.title}
                                                           authors={book.authors}
