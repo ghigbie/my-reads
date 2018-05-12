@@ -36,6 +36,7 @@ class SearchPage extends Component{
                 <form onSubmit={this.props.searchBooks}>
                     <input type="text" 
                            name="search"
+                           className="form-control"
                            placeHolder="Search Books"
                            value={this.state.query}
                            onChange={true}/>
