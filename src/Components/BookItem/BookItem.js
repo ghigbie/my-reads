@@ -16,7 +16,7 @@ class BookItem extends Component{
                      alt={`the book ${this.props.title} by ${this.props.authors}`} />
                 <div className="card-body">
                     <h5 className="card-title book-title">{this.props.title}</h5>
-                    <h5 className="card-title by-line by-line">{`By ${this.props.authors}`}</h5>
+                    <h5 className="card-title by-line by-line">{`By ${this.props.authors.toString().replace(/,/g, ', ')}`}</h5>
                     <p className="card-text book-description">{`${this.props.description.substring(0, 188)}...`}</p>
                     <div className="btn-bottom-right">
                         <DropdownButton sectionTitles={this.props.sectionTitles}
