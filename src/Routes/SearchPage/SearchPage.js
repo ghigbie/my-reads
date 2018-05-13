@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SearchPage.css';
 
-import BackArrow from './../../Components/BackArrow/BackArrow';
 import BookItem  from './../../Components/BookItem/BookItem';
 
 class SearchPage extends Component{
@@ -32,14 +31,15 @@ class SearchPage extends Component{
             : books.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-
+        const style = {display: 'inline'};
+        
         return(
             <div className="container">
-                <BackArrow />
-                <form onSubmit={this.props.searchBooks}>
+                <form className="search-navigation">
+                    <a className="close-search" href="/"></a>
                     <input type="text" 
                            name="search"
-                           className="form-control"
+                           className="form-control search-books-bar"
                            placeholder="Search Books"
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
@@ -50,7 +50,7 @@ class SearchPage extends Component{
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
-                <div className="book-display search-container">
+                <div className="book-display search-display-container">
                     {filteredBooks.map((book) => (<BookItem key={book.id}
                                                             title={book.title}
                                                             authors={book.authors}
