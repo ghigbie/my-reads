@@ -7,13 +7,11 @@ This app will allow the user to manage a collection of books electronically.
 ## Getting Started
 
 In the project directory, you can run:
-`npm install`
 
-Installs all of the npm modules needed to run this app.
+`npm install` - Installs all of the npm modules needed to run this app.
 
-`npm start`
+`npm start` - Runs the app in the development mode.<br>
 
-Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
