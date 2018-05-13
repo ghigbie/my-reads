@@ -13,7 +13,7 @@ class BookItem extends Component{
             <div className="card book-item">
                 <img className="card-img-top book-image" 
                      src={this.props.image} 
-                     alt={`the book ${this.props.title} by ${this.props.authors}`} />
+                     alt={`the book ${this.props.title} by ${this.props.authors.toString().replace(/,/g, ', ')}`} />
                 <div className="card-body">
                     <h5 className="card-title book-title">{this.props.title}</h5>
                     <h5 className="card-title by-line by-line">{`By ${this.props.authors.toString().replace(/,/g, ', ')}`}</h5>
