@@ -28,7 +28,6 @@ class MyReadsApp extends Component {
     BookAPI.getAll()
       .then((booksRequested) => {
         this.setState(() => ({books: booksRequested }));
-        console.log(this.state.books);
       });
   }
   
