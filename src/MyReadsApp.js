@@ -63,14 +63,15 @@ class MyReadsApp extends Component {
                     subtitle={starterData.subtitle}/>
             <Switch>
               <Route path="/" exact render={() => (
-                <MainContent sectionTitles={starterData.sectionTitles}
-                             books={this.state.books}
-                             changeShelf={this.handleChangeShelf}/>)} />
+                <MainContent books={this.state.books}
+                             changeShelf={this.handleChangeShelf}
+                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="/add" 
                      component={AddBook} 
                      addBook={this.handleAddBook}/>
               <Route path="/search" render={() => (
                 <SearchPage books={this.state.books}
+                            changeShelf={this.handleChangeShelf}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>
