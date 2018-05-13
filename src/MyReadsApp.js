@@ -45,13 +45,13 @@ class MyReadsApp extends Component {
       .then((response) => {});
   }
   
-  handleAddBook(book){
+  handleAddBook(e){
     alert('handleAddBook called');
-    const bookToAdd = 'stuff';
+    const bookToAdd = e.target.value;
     const targetShelf = 'read';
-    this.setState((prevState) => ({books: prevState.books.concat(book)}));
+    this.setState((prevState) => ({books: prevState.books.concat(bookToAdd)}));
     
-    BookAPI.update(book, targetShelf)
+    BookAPI.update(bookToAdd, targetShelf)
       .then((response) => {});
   }
   
