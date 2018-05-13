@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import serializeForm from 'form-serialize';
 import './AddBookForm.css';
 
 class AddBookForm extends Component{
-    static propTypes = {
-        addBook: PropTypes.func.isRequired
-    }
-    
-    handleSubmit = (e) =>{
-        e.preventDefault();
-        const values = serializeForm(e.target, {hash: true});
-        console.log('Values: ', values);
-        if(this.props.addBook){
-            this.props.addBook(values);
-        }
-    }
-    
+
     render(){
         return(
             <div className="container">
                 <div className="add-title">
                     <h3>Add a Book</h3>
+                    <h3>(This is a Non-functional Page. I made it for fun : ))</h3>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">

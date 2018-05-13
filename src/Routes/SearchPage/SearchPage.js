@@ -35,7 +35,7 @@ class SearchPage extends Component{
         return(
             <div className="container">
                 <form className="search-navigation">
-                    <a className="close-search" href="/"></a>
+                    <a className="close-search" href="/">{true}</a>
                     <input type="text" 
                            name="search"
                            className="form-control search-books-bar"
