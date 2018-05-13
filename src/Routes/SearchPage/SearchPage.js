@@ -31,8 +31,7 @@ class SearchPage extends Component{
             : books.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-        const style = {display: 'inline'};
-        
+                
         return(
             <div className="container">
                 <form className="search-navigation">
