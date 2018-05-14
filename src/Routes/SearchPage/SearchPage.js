@@ -44,7 +44,7 @@ class SearchPage extends Component{
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
-                {filteredBooks.length > 0 && filteredBooks.length !== books.length &&
+                {filteredBooks.length > 0 &&
                     <div className="showing-books">
                         <span>Now showing {filteredBooks.length} of {books.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
