@@ -33,7 +33,7 @@ class SearchPage extends Component{
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
                 
         return(
-            <div className="container">
+            <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>
                 <form className="search-navigation">
                     <a className="close-search" href="/">{true}</a>
