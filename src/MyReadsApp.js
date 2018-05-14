@@ -34,8 +34,8 @@ class MyReadsApp extends Component {
     const targetID = selectedBook[0]; //This is the value of the ID, which was on the first item on the array
     const targetShelf = selectedBook[1]; //This is the shelf that the book should move to, which was on the second element of the array
     const targetBook = this.state.books.filter((book) => book.id === targetID); //This is an array with the book that is to be changed
-    if(targetShelf === 'none'){
-      this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)}));
+    if(targetShelf === 'none'){//If 'none is selected, then this book should be removed'
+      this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)})); //this removes the book by modifying the array
     }
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
     targetBook[0].shelf = targetShelf;
@@ -45,12 +45,6 @@ class MyReadsApp extends Component {
     BookAPI.update(targetBook[0], targetShelf) //This updates the data base
       .then((response) => {});
   }
-  
-  // handleRemoveBook(e){
-  //   const selectedBook = e.currentTarget.value
-  //   const targetID = select
-  //   this.setState((prevState) => ({books: prevState.books.filter((book) => book.id === targetID)}));
-  // }
   
   
   render() {
