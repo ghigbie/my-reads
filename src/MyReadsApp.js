@@ -43,6 +43,10 @@ class MyReadsApp extends Component {
       .then((response) => {});
   }
   
+  handleRemoveBook(e){
+    this.setState((prevState) => ({books: prevState.books.}));
+  }
+  
   
   render() {
     return (
