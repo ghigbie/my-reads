@@ -51,7 +51,7 @@ class DropdownButton extends Component{
                         {this.props.sectionTitles[2].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},none`}
-                        onClick={this.props.changeSelf}>None</DropdownItem>
+                        onClick={this.props.changeShelf}>None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
     );
