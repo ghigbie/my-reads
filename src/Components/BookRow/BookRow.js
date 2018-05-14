@@ -8,7 +8,7 @@ const BookRow = (props) =>
     (<div>
         <h4 className="shelf-title">{props.heading}</h4>
         <div className="books-container row">
-            {this.props.books.filter((book) => 
+            {props.books.filter((book) => 
                 book.shelf === props.shelfCategory).map((book) => {
                     return (<BookItem key={book.id}
                                             title={book.title}
