@@ -27,7 +27,7 @@ class SearchPage extends Component{
     render(){
         const { books } = this.props;
         const { query } = this.state;
-        const filteredBooks = query === '' ? books //This varibale filters the list of books
+        const filteredBooks = query === '' ? [] //This varibale filters the list of books
             : books.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
