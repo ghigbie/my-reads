@@ -34,7 +34,7 @@ class SearchPage extends Component{
                 
         return(
             <div className="container">
-            
+                <h5 className="search-instructions">Search by Title or by Author</h5>
                 <form className="search-navigation">
                     <a className="close-search" href="/">{true}</a>
                     <input type="text" 
