@@ -16,7 +16,6 @@ class MyReadsApp extends Component {
   constructor(props){
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);    
     
     this.state = {
       books: []

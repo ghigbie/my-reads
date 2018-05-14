@@ -6,10 +6,10 @@ import BookItem from './../BookItem/BookItem';
 
 const BookRow = (props) => 
     (<div>
-        <h4 className="shelf-title">{this.props.heading}</h4>
+        <h4 className="shelf-title">{props.heading}</h4>
         <div className="books-container row">
             {this.props.books.filter((book) => 
-                book.shelf === this.props.shelfCategory).map((book) => {
+                book.shelf === props.shelfCategory).map((book) => {
                     return (<BookItem key={book.id}
                                             title={book.title}
                                             authors={book.authors}
@@ -17,8 +17,8 @@ const BookRow = (props) =>
                                             description={book.description}
                                             id={book.id}
                                             shelf={book.shelf}
-                                            sectionTitles={this.props.sectionTitles}
-                                            changeShelf={this.props.changeShelf}/>);
+                                            sectionTitles={props.sectionTitles}
+                                            changeShelf={props.changeShelf}/>);
             })}
         </div>
     </div>
