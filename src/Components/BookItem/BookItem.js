@@ -9,7 +9,7 @@ import BookModal from './../BookModal/BookModal';
 const BookItem = (props) =>
     (<div className="card book-item">
         <img className="card-img-top book-image" 
-             src={this.props.image} 
+             src={props.image} 
              alt={`the book ${props.title} by ${props.authors.toString().replace(/,/g, ', ')}`} />
         <div className="card-body">
             <h5 className="card-title book-title">{props.title}</h5>
