@@ -20,6 +20,7 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
+        this.props.searchBooks(query);
     }
     
     clearQuery = () => this.updateQuery('')

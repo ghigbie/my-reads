@@ -47,7 +47,7 @@ class MyReadsApp extends Component {
   }
   
   handleSearchBooks(e){
-    BookAPI.search(e.value).then(response => []);
+    BookAPI.search(e.value).then(response => {});
   }
   
   

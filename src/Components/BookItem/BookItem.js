@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import { NavLink } from 'react-router-dom';
 import './BookItem.css';
 import PropTypes from 'prop-types';

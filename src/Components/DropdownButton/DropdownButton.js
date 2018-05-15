@@ -8,6 +8,8 @@ class DropdownButton extends Component{
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.isSelected = this.isSelected.bind(this);
+    
     this.state = {
       dropdownOpen: false
     };
@@ -24,6 +26,8 @@ class DropdownButton extends Component{
     });
   }
   
+  isSelected = (shelfSelection) => this.props.shelf === shelfSelection ? true : false;
+
   static propTypes = {
       sectionTitles: PropTypes.array.isRequired
   }
