@@ -46,6 +46,10 @@ class MyReadsApp extends Component {
       .then((response) => {});
   }
   
+  handleSearchBooks(e){
+    BookAPI.search(e.value).then(response => []);
+  }
+  
   
   render() {
     return (
@@ -62,6 +66,7 @@ class MyReadsApp extends Component {
               <Route path="/search" render={() => (
                 <SearchPage books={this.state.books}
                             changeShelf={this.handleChangeShelf}
+                            searchBooks={this.handleSearchBooks}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>
