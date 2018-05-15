@@ -53,7 +53,7 @@ class SearchPage extends Component{
                 </form>
                 {filteredBooks.length > 0 &&
                     <div className="showing-books">
-                        <span>Now showing {searchedBooks.length} of {books.length}</span>
+                        <span>Now showing {filteredBooks.length} of {books.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
