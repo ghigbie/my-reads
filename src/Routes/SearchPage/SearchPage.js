@@ -22,23 +22,27 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
-        console.log('update query caleld');
-        BookAPI.search(this.state.query).then((response) =>
+        BookAPI.search(query).then((response) =>
             (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}))));
-        console.log(BookAPI.search(query));
+        console.log('update query called');
+        // BookAPI.search(this.state.query).then((response) =>
+        //     (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}))));
+        // console.log(BookAPI.search(query));
         //this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(BookAPI.search(query))}));
     }
     
     clearQuery = () => this.updateQuery('')
     
+    ComponentDidMount(){
+        BookAPI.search(this.state.query).then((response) =>(this.setState(() => ({searchedBooks: response.data}))));
+    }
+    
     render(){
-        const { books } = this.props;
-        const { query } = this.state;
-        const filteredBooks = query === '' ? [] //books //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
+        const { query, searchedBooks } = this.state;
+        const filteredBooks = query === '' ? this.state.searchedBooks //[] //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
             : this.state.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-        //console.log(searchedBooks);
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>
@@ -53,7 +57,7 @@ class SearchPage extends Component{
                 </form>
                 {filteredBooks.length > 0 &&
                     <div className="showing-books">
-                        <span>Now showing {filteredBooks.length} of {books.length}</span>
+                        <span>Now showing {filteredBooks.length} of {searchedBooks.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
