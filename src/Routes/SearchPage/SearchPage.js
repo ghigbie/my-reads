@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import * as BookAPI from './../../utils/BookAPI';
 import './SearchPage.css';
 
 import BookItem  from './../../Components/BookItem/BookItem';
@@ -10,7 +11,8 @@ class SearchPage extends Component{
         this.updateQuery = this.updateQuery.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
         this.state = {
-            query: ''
+            query: '',
+            displayBooks: []
         };
     }
     
@@ -20,7 +22,6 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
-        this.props.searchBooks(query);
     }
     
     clearQuery = () => this.updateQuery('')
@@ -29,7 +30,7 @@ class SearchPage extends Component{
         const { books } = this.props;
         const { query } = this.state;
         const filteredBooks = query === '' ? [] //books //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
-            : books.filter((book) => (  //This funciton filters the books by title and author
+            : this.state.displayBooks.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
                 
