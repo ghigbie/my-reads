@@ -8,7 +8,7 @@ class DropdownButton extends Component{
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.isSelected = this.isSelected.bind(this);
+    this.isActive = this.isActive.bind(this);
     
     this.state = {
       dropdownOpen: false
@@ -26,7 +26,7 @@ class DropdownButton extends Component{
     });
   }
   
-  isSelected = (shelfSelection) => this.props.shelf === shelfSelection ? true : false;
+  isActive = (shelfSelection) => this.props.shelf === shelfSelection ? true : false;
 
   static propTypes = {
       sectionTitles: PropTypes.array.isRequired
@@ -42,19 +42,25 @@ class DropdownButton extends Component{
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Move to...</DropdownItem>
+          {this.props.sectionTitles.map((sectionTitle, index) => 
+            (<DropdownItem key={index}
+                          value={`${this.props.id},${sectionTitle.shelfCategory}`}
+                          onClick={this.props.changeShelf}
+                          active={this.isActive(sectionTitle.shelfCategory)}>
+                          {sectionTitle.heading}</DropdownItem>))}
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[0].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        active={this.isSelected(this.props.sectionTitles[0].shelfCategory)}>
+                        active={this.isActive(this.props.sectionTitles[0].shelfCategory)}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[1].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        active={this.isSelected(this.props.sectionTitles[1].shelfCategory)}>
+                        active={this.isActive(this.props.sectionTitles[1].shelfCategory)}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[2].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        active={this.isSelected(this.props.sectionTitles[2].shelfCategory)}>
+                        active={this.isActive(this.props.sectionTitles[2].shelfCategory)}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},none`}
