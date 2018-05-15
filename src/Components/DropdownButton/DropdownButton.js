@@ -44,17 +44,17 @@ class DropdownButton extends Component{
           <DropdownItem header>Move to...</DropdownItem>
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[0].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        selected={this.isSelected(this.props.sectionTitles[0].shelfCategory)}>
+                        active={this.isSelected(this.props.sectionTitles[0].shelfCategory)}>
                         {this.props.sectionTitles[0].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[1].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        selected={this.isSelected(this.props.sectionTitles[1].shelfCategory)}>
+                        active={this.isSelected(this.props.sectionTitles[1].shelfCategory)}>
                         {this.props.sectionTitles[1].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},${this.props.sectionTitles[2].shelfCategory}`}
                         onClick={this.props.changeShelf}
-                        selected={this.isSelected(this.props.sectionTitles[2].shelfCategory)}>
+                        active={this.isSelected(this.props.sectionTitles[2].shelfCategory)}>
                         {this.props.sectionTitles[2].heading}</DropdownItem>
                         
           <DropdownItem value={`${this.props.id},none`}
