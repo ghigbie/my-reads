@@ -12,7 +12,7 @@ class SearchPage extends Component{
         this.clearQuery = this.clearQuery.bind(this);
         this.state = {
             query: '',
-            displayBooks: []
+            searchedBooks: []
         };
     }
     
@@ -22,6 +22,9 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
+        console.log('update query caleld');
+        BookAPI.search(query).then((response) =>
+            (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(JSON.parse(response))}))));
     }
     
     clearQuery = () => this.updateQuery('')
@@ -29,11 +32,11 @@ class SearchPage extends Component{
     render(){
         const { books } = this.props;
         const { query } = this.state;
-        const filteredBooks = query === '' ? [] //books //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
+        const searchedBooks = query === '' ? [] //books //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
             : this.state.displayBooks.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-                
+        console.log(searchedBooks);
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>
@@ -46,14 +49,14 @@ class SearchPage extends Component{
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
-                {filteredBooks.length > 0 &&
+                {searchedBooks.length > 0 &&
                     <div className="showing-books">
-                        <span>Now showing {filteredBooks.length} of {books.length}</span>
+                        <span>Now showing {searchedBooks.length} of {books.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
                 <div className="book-display search-display-container">
-                    {filteredBooks.map((book) => (<BookItem key={book.id}
+                    {searchedBooks.map((book) => (<BookItem key={book.id}
                                                             title={book.title}
                                                             authors={book.authors}
                                                             image={book.imageLinks.thumbnail}
