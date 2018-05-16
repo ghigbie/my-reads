@@ -16,7 +16,7 @@ class MyReadsApp extends Component {
   constructor(props){
     super(props);
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
-    
+    this.handleSearchBooks = this.handleSearchBooks.bind(this);
     this.state = {
       books: [],
       searchedBooks: []
@@ -45,7 +45,7 @@ class MyReadsApp extends Component {
       this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)})); //this removes the book by modifying the array
     }
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
-    targetBook[0].shelf = targetShelf;
+    targetBook[0]['shelf'] = targetShelf;
     const newBooksArray = this.state.books; //This is the original array. 
     newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
     this.setState(() => ({books: newBooksArray})); //This sets the state of the books item in state.
@@ -53,9 +53,9 @@ class MyReadsApp extends Component {
       .then((response) => {});
   }
   
-  // handleSearchBooks(e){
-  //   BookAPI.search(e.value).then(response => {});
-  // }
+  handleSearchBooks(e){
+    
+  }
   
   
   render() {
@@ -73,6 +73,7 @@ class MyReadsApp extends Component {
               <Route path="/search" render={() => (
                 <SearchPage searchedBooks={this.state.searchedBooks}
                             changeShelf={this.handleChangeShelf}
+                            searchBooks={this.handleSearchBooks}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>

@@ -32,14 +32,14 @@ class SearchPage extends Component{
     
     clearQuery = () => this.updateQuery('')
     
-    ComponentDidMount(){
-        BookAPI.search('a')
-          .then((response) => {
-            this.setState(() => ({searchedBooks: response}));
-           console.log("called", response);
-          });
-        // console.log(this.state.searchedBooks)
-    }
+    // ComponentDidMount(){
+    //     BookAPI.search('a')
+    //       .then((response) => {
+    //         this.setState(() => ({searchedBooks: response}));
+    //       console.log("called", response);
+    //       });
+    //     // console.log(this.state.searchedBooks)
+    // }
     
     render(){
         const { query } = this.state;
