@@ -35,13 +35,13 @@ const BookItem = (props) =>
 
 
 BookItem.propTypes = {
-    title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    shelf: PropTypes.string.isRequired,
-    sectionTitles: PropTypes.array.isRequired
+    // title: PropTypes.string.isRequired,
+    // authors: PropTypes.array.isRequired,
+    // image: PropTypes.string.isRequired,
+    // description: PropTypes.string.isRequired,
+    // id: PropTypes.string.isRequired,
+    // shelf: PropTypes.string.isRequired,
+    // sectionTitles: PropTypes.array.isRequired
 };
 
 export default BookItem;

@@ -26,14 +26,15 @@ class MyReadsApp extends Component {
   componentDidMount(){
     BookAPI.getAll()
       .then((booksRequested) => {
-        this.setState(() => ({books: booksRequested}));
+        this.setState(() => (
+          { books: booksRequested} ));
         console.log(booksRequested);
       });
-    BookAPI.search('a')
-      .then((response) => {
-        this.setState(() => ({searchedBooks: response}));
-        console.log(response);
-      });
+    // BookAPI.search('')
+    //   .then((response) => {
+    //     this.setState(() => ({searchedBooks: response}));
+    //     console.log(response);
+    //   });
   }
   
   handleChangeShelf(e){
@@ -45,16 +46,21 @@ class MyReadsApp extends Component {
       this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)})); //this removes the book by modifying the array
     }
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
-    targetBook[0]['shelf'] = targetShelf;
+    targetBook[0].shelf = targetShelf;
     const newBooksArray = this.state.books; //This is the original array. 
     newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
-    this.setState(() => ({books: newBooksArray})); //This sets the state of the books item in state.
+    this.setState(() => ({ books: newBooksArray })); //This sets the state of the books item in state.
     BookAPI.update(targetBook[0], targetShelf) //This updates the data base
       .then((response) => {});
   }
   
-  handleSearchBooks(e){
-    
+  handleSearchBooks(query){
+    BookAPI.search(query)
+      .then((response) => {
+        this.setState(() => ({searchedBooks: response}));
+        console.log(response);
+        console.log(this.state.searchedBooks);
+      });
   }
   
   
@@ -74,6 +80,7 @@ class MyReadsApp extends Component {
                 <SearchPage searchedBooks={this.state.searchedBooks}
                             changeShelf={this.handleChangeShelf}
                             searchBooks={this.handleSearchBooks}
+                            originalLength={this.state.originalSerachLength}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>

@@ -21,6 +21,10 @@ class SearchPage extends Component{
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
+        this.props.searchBooks(query);
+        
+        //this.props.searchBooks(this.state.query);
+        //this.props.searchBooks(this.state.query);
         // BookAPI.search(query).then((response) =>
         //     (this.setState(() => ({searchedBooks: response}))));
         // console.log('update query called');
@@ -41,13 +45,15 @@ class SearchPage extends Component{
     //     // console.log(this.state.searchedBooks)
     // }
     
+    
     render(){
-        const { query } = this.state;
-        const filteredBooks = query === '' ? [] //searchedBooks //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
-            : this.props.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
-                book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
-                || book.authors && book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-        console.log('FILTERED', filteredBooks);
+        // const { query } = this.state;
+        // const filteredBooks = query === '' ? [] //searchedBooks //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
+        //     : this.props.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
+        //         book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
+        //         || book.authors && book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
+        //console.log('FILTERED', filteredBooks);
+        
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>
@@ -60,14 +66,14 @@ class SearchPage extends Component{
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
-                {filteredBooks.length > 0 &&
+                {this.props.searchedBooks.length > 0 &&
                     <div className="showing-books">
-                        <span>Now showing {filteredBooks.length} of {this.props.searchedBooks.length}</span>
+                        <span>Now showing {this.props.searchedBooks.length} of {this.props.searchedBooks.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
                 <div className="book-display search-display-container">
-                    {filteredBooks.map((book) => (<BookItem key={book.id}
+                    {this.props.searchedBooks.map((book) => (<BookItem key={book.id}
                                                             title={book.title}
                                                             authors={book.authors}
                                                             image={book.imageLinks.thumbnail}
