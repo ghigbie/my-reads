@@ -33,11 +33,11 @@ class SearchPage extends Component{
     clearQuery = () => this.updateQuery('')
     
     ComponentDidMount(){
-        // BookAPI.search('a')
-        //     .then((response) => {
-        //     this.setState(() => ({searchedBooks: response}));
-        //     console.log(response);
-        // });
+        BookAPI.search('a')
+          .then((response) => {
+            this.setState(() => ({searchedBooks: response}));
+           console.log("called", response);
+          });
         // console.log(this.state.searchedBooks)
     }
     
@@ -46,7 +46,7 @@ class SearchPage extends Component{
         const filteredBooks = query === '' ? [] //searchedBooks //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
             : this.props.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
-                || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
+                || book.authors && book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
         console.log('FILTERED', filteredBooks);
         return(
             <div className="books-container">
@@ -71,7 +71,7 @@ class SearchPage extends Component{
                                                             title={book.title}
                                                             authors={book.authors}
                                                             image={book.imageLinks.thumbnail}
-                                                            
+                                                            description={book.description}
                                                             id={book.id}
                                                             shelf={book.shelf}
                                                             sectionTitles={this.props.sectionTitles}
