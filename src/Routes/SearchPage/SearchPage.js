@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as BookAPI from './../../utils/BookAPI';
 import './SearchPage.css';
 
 import BookItem  from './../../Components/BookItem/BookItem';
@@ -9,7 +8,6 @@ class SearchPage extends Component{
     constructor(props){
         super(props);
         this.updateQuery = this.updateQuery.bind(this);
-        this.clearQuery = this.clearQuery.bind(this);
         this.state = {
             query: ''
         };
@@ -23,11 +21,6 @@ class SearchPage extends Component{
         this.setState(() => ({query: query}));
         this.props.searchBooks(query);
     }
-    
-    clearQuery = () => this.updateQuery('')
-
-    BookAPI
-    
     
     render(){
         const { searchedBooks } = this.props;
