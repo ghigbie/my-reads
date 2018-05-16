@@ -44,6 +44,7 @@ class SearchPage extends Component{
     //       });
     //     // console.log(this.state.searchedBooks)
     // }
+    BookAPI
     
     
     render(){
@@ -53,6 +54,7 @@ class SearchPage extends Component{
         //         book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
         //         || book.authors && book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
         //console.log('FILTERED', filteredBooks);
+        const { searchedBooks } = this.props;
         
         return(
             <div className="books-container">
@@ -66,23 +68,23 @@ class SearchPage extends Component{
                            value={this.state.query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
-                {this.props.searchedBooks.length > 0 &&
-                    <div className="showing-books">
-                        <span>Now showing {this.props.searchedBooks.length} of {this.props.searchedBooks.length}</span>
-                        <button onClick={(event) => this.clearQuery()}>Clear Search</button>
-                    </div>}
+
+                {console.log(this.state.query)}
+                {console.log(this.props.searchedBooks)}
+                {this.props.searchBooks.length > 0 && 
                 
-                <div className="book-display search-display-container">
-                    {this.props.searchedBooks.map((book) => (<BookItem key={book.id}
+                (<div className="book-display search-display-container">
+                    {searchedBooks.map((book, index) => (<BookItem key={index}
                                                             title={book.title}
-                                                            authors={book.authors}
-                                                            image={book.imageLinks.thumbnail}
+                                                            authors={book.authors !== undefined && book.authors}
+                                                            image={book.imageLinks !== undefined && book.imageLinks.thumbnail}
                                                             description={book.description}
-                                                            id={book.id}
+                                                            id={book.id !== undefined && book.id}
                                                             shelf={book.shelf}
                                                             sectionTitles={this.props.sectionTitles}
                                                             changeShelf={this.props.changeShelf}/>))}
-                </div>
+                
+                </div>)}
             </div>);
     }
 

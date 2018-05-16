@@ -26,9 +26,8 @@ class MyReadsApp extends Component {
   componentDidMount(){
     BookAPI.getAll()
       .then((booksRequested) => {
-        this.setState(() => (
-          { books: booksRequested} ));
-        console.log(booksRequested);
+        this.setState(() => ({ books: booksRequested} ));
+        //console.log(booksRequested);
       });
     // BookAPI.search('')
     //   .then((response) => {
@@ -55,12 +54,16 @@ class MyReadsApp extends Component {
   }
   
   handleSearchBooks(query){
-    BookAPI.search(query)
-      .then((response) => {
-        this.setState(() => ({searchedBooks: response}));
-        console.log(response);
-        console.log(this.state.searchedBooks);
-      });
+    if(query){
+      BookAPI.search(query)
+        .then((response) => {
+          this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}));
+          console.log(response);
+          console.log(this.state.searchedBooks);
+        });
+    }else{
+      this.setState(() => ({searchedBooks: []}));
+    }
   }
   
   
@@ -80,7 +83,6 @@ class MyReadsApp extends Component {
                 <SearchPage searchedBooks={this.state.searchedBooks}
                             changeShelf={this.handleChangeShelf}
                             searchBooks={this.handleSearchBooks}
-                            originalLength={this.state.originalSerachLength}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>
