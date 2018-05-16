@@ -22,40 +22,15 @@ class SearchPage extends Component{
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
         this.props.searchBooks(query);
-        
-        //this.props.searchBooks(this.state.query);
-        //this.props.searchBooks(this.state.query);
-        // BookAPI.search(query).then((response) =>
-        //     (this.setState(() => ({searchedBooks: response}))));
-        // console.log('update query called');
-        // BookAPI.search(this.state.query).then((response) =>
-        //     (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}))));
-        // console.log(BookAPI.search(query));
-        //this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(BookAPI.search(query))}));
     }
     
     clearQuery = () => this.updateQuery('')
-    
-    // ComponentDidMount(){
-    //     BookAPI.search('a')
-    //       .then((response) => {
-    //         this.setState(() => ({searchedBooks: response}));
-    //       console.log("called", response);
-    //       });
-    //     // console.log(this.state.searchedBooks)
-    // }
+
     BookAPI
     
     
     render(){
-        // const { query } = this.state;
-        // const filteredBooks = query === '' ? [] //searchedBooks //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
-        //     : this.props.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
-        //         book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
-        //         || book.authors && book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
-        //console.log('FILTERED', filteredBooks);
         const { searchedBooks } = this.props;
-        
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>

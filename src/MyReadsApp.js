@@ -57,7 +57,7 @@ class MyReadsApp extends Component {
     if(query){
       BookAPI.search(query)
         .then((response) => {
-          this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}));
+          this.setState(() => ({searchedBooks: response}));
           console.log(response);
           console.log(this.state.searchedBooks);
         });
