@@ -10,11 +10,11 @@ const BookItem = (props) =>
     (<div className="card book-item">
         <img className="card-img-top book-image" 
              src={props.image} 
-             alt={`the book ${props.title} by ${props.authors.toString().replace(/,/g, ', ')}`} />
+             alt={`the book ${props.title} by ${props.authors && props.authors.toString().replace(/,/g, ', ')}`} />
         <div className="card-body">
             <h5 className="card-title book-title">{props.title}</h5>
-            <h5 className="card-title by-line by-line">{`By ${props.authors.toString().replace(/,/g, ', ')}`}</h5>
-            <p className="card-text book-description">{`${props.description.substring(0, 188)}...`}</p>
+            <h5 className="card-title by-line by-line">{`By ${props.authors && props.authors.toString().replace(/,/g, ', ')}`}</h5>
+            <p className="card-text book-description">{`${props.description && props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
                 <DropdownButton sectionTitles={props.sectionTitles}
                                 id={props.id}

@@ -18,14 +18,21 @@ class MyReadsApp extends Component {
     this.handleChangeShelf = this.handleChangeShelf.bind(this);
     
     this.state = {
-      books: []
+      books: [],
+      searchedBooks: []
     };
   }
   
   componentDidMount(){
     BookAPI.getAll()
       .then((booksRequested) => {
-        this.setState(() => ({books: booksRequested }));
+        this.setState(() => ({books: booksRequested}));
+        console.log(booksRequested);
+      });
+    BookAPI.search('a')
+      .then((response) => {
+        this.setState(() => ({searchedBooks: response}));
+        console.log(response);
       });
   }
   
@@ -64,9 +71,8 @@ class MyReadsApp extends Component {
               <Route path="/add" 
                      component={AddBook} />
               <Route path="/search" render={() => (
-                <SearchPage books={this.state.books}
+                <SearchPage searchedBooks={this.state.searchedBooks}
                             changeShelf={this.handleChangeShelf}
-                            searchBooks={this.handleSearchBooks}
                             sectionTitles={starterData.sectionTitles}/>)} />
               <Route path="*" component={NotFound} />
             </Switch>

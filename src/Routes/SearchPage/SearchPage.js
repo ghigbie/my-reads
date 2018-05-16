@@ -11,20 +11,19 @@ class SearchPage extends Component{
         this.updateQuery = this.updateQuery.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
         this.state = {
-            query: '',
-            searchedBooks: []
+            query: ''
         };
     }
     
     static propTypes = {
-        books: PropTypes.array.isRequired
+        searchedBooks: PropTypes.array.isRequired
     }
     
     updateQuery = (query) => {
         this.setState(() => ({query: query}));
-        BookAPI.search(query).then((response) =>
-            (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}))));
-        console.log('update query called');
+        // BookAPI.search(query).then((response) =>
+        //     (this.setState(() => ({searchedBooks: response}))));
+        // console.log('update query called');
         // BookAPI.search(this.state.query).then((response) =>
         //     (this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.concat(response)}))));
         // console.log(BookAPI.search(query));
@@ -34,15 +33,21 @@ class SearchPage extends Component{
     clearQuery = () => this.updateQuery('')
     
     ComponentDidMount(){
-        BookAPI.search(this.state.query).then((response) =>(this.setState(() => ({searchedBooks: response.data}))));
+        // BookAPI.search('a')
+        //     .then((response) => {
+        //     this.setState(() => ({searchedBooks: response}));
+        //     console.log(response);
+        // });
+        // console.log(this.state.searchedBooks)
     }
     
     render(){
-        const { query, searchedBooks } = this.state;
-        const filteredBooks = query === '' ? this.state.searchedBooks //[] //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
-            : this.state.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
+        const { query } = this.state;
+        const filteredBooks = query === '' ? [] //searchedBooks //This varibale filters the list of books. It can either be "books" or "[]", depending on what you want to display
+            : this.props.searchedBooks.filter((book) => (  //This funciton filters the books by title and author
                 book.title.toLowerCase().includes(query.toLowerCase())) //this line filters by title
                 || book.authors.toString().toLowerCase().includes(query.toLowerCase())); //this line filters by title
+        console.log('FILTERED', filteredBooks);
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or by Author</h5>
@@ -57,7 +62,7 @@ class SearchPage extends Component{
                 </form>
                 {filteredBooks.length > 0 &&
                     <div className="showing-books">
-                        <span>Now showing {filteredBooks.length} of {searchedBooks.length}</span>
+                        <span>Now showing {filteredBooks.length} of {this.props.searchedBooks.length}</span>
                         <button onClick={(event) => this.clearQuery()}>Clear Search</button>
                     </div>}
                 
@@ -66,7 +71,7 @@ class SearchPage extends Component{
                                                             title={book.title}
                                                             authors={book.authors}
                                                             image={book.imageLinks.thumbnail}
-                                                            description={book.description}
+                                                            
                                                             id={book.id}
                                                             shelf={book.shelf}
                                                             sectionTitles={this.props.sectionTitles}
