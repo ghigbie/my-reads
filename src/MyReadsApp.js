@@ -49,17 +49,11 @@ class MyReadsApp extends Component {
   
   handleSearchBooks(query){
     const queryAPI = query.trim();
-    console.log("INNER", queryAPI);
     if(queryAPI){
       BookAPI.search(queryAPI)
         .then((response) => {
-          if(response !== []){
             this.setState(() => ({searchedBooks: response}));
-            console.log(this.state.searchedBooks);
-          }else{
-            this.setState(() => ({searchedBook: []}));
-          }
-        });
+          });
     }else{
       this.setState(() => ({searchedBooks: []}));
     }
