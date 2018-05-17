@@ -15,7 +15,13 @@ class SearchPage extends Component{
     }
     
     static propTypes = {
-        searchedBooks: PropTypes.array.isRequired
+        searchedBooks: PropTypes.array.isRequired,
+        title: PropTypes.string,
+        authors: PropTypes.array,
+        image: PropTypes.string,
+        description: PropTypes.string,
+        id: PropTypes.string,
+        sectionTitle: PropTypes.string,
     }
     
     updateQuery = (query) => { 
