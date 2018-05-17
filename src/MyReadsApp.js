@@ -27,13 +27,7 @@ class MyReadsApp extends Component {
     BookAPI.getAll()
       .then((booksRequested) => {
         this.setState(() => ({ books: booksRequested} ));
-        //console.log(booksRequested);
       });
-    // BookAPI.search('')
-    //   .then((response) => {
-    //     this.setState(() => ({searchedBooks: response}));
-    //     console.log(response);
-    //   });
   }
   
   handleChangeShelf(e){
@@ -54,12 +48,17 @@ class MyReadsApp extends Component {
   }
   
   handleSearchBooks(query){
-    if(query){
-      BookAPI.search(query)
+    const queryAPI = query.trim();
+    console.log("INNER", queryAPI);
+    if(queryAPI){
+      BookAPI.search(queryAPI)
         .then((response) => {
-          this.setState(() => ({searchedBooks: response}));
-          console.log(response);
-          console.log(this.state.searchedBooks);
+          if(response !== []){
+            this.setState(() => ({searchedBooks: response}));
+            console.log(this.state.searchedBooks);
+          }else{
+            this.setState(() => ({searchedBook: []}));
+          }
         });
     }else{
       this.setState(() => ({searchedBooks: []}));
