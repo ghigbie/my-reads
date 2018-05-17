@@ -38,12 +38,10 @@ class MyReadsApp extends Component {
     let newBooksArray = this.state.books;
     let targetBook;
     if(isSearch === 'true'){
-      console.log("search running");
       targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0]; //this identif
       targetBook['shelf'] = targetShelf;//this adds the shelf property to book object that does not have a shelf property
       this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.filter((book) => book.id !== targetID)}));
       this.setState((prevState) => ({books: prevState.books.concat(targetBook)})); //this adds the searched book to the books array
-      console.log(targetBook);
     }else{
       console.log("not search running");
       if(targetShelf === 'none'){//If none is selected, then this book should be removed'
