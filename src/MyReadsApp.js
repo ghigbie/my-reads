@@ -37,15 +37,16 @@ class MyReadsApp extends Component {
     const isSearch = selectedBook[2];//This determines if the book was from the searched books
     let targetBook;
     if(isSearch){
-      targetBook = this.state.searchedBooks.filter((book) => book.id === targetID); //This is the array with the book that is be be changed
+      targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0]; //This is the array with the book that is be be changed
     }else{
-      targetBook = this.state.books.filter((book) => book.id === targetID); //This is an array with the book that is to be changed
+      targetBook = this.state.books.filter((book) => book.id === targetID)[0]; //This is an array with the book that is to be changed
     }
     if(targetShelf === 'none'){//If none is selected, then this book should be removed'
       this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)})); //this removes the book by modifying the array
     }
     const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
-    targetBook[0].shelf = targetShelf;
+    targetBook.shelf = targetShelf;
+    console.log(targetBook[0]);
     const newBooksArray = this.state.books; //This is the original array. 
     newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
     this.setState(() => ({ books: newBooksArray })); //This sets the state of the books item in state.
