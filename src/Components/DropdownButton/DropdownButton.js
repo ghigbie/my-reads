@@ -26,11 +26,12 @@ class DropdownButton extends Component{
   }
   
   static propTypes = {
-      sectionTitles: PropTypes.array.isRequired
+      sectionTitles: PropTypes.array.isRequired,
+      id: PropTypes.string.isRequired,
+      changeShelf: PropTypes.func.isRequired
   }
 
   render() {
-    console.log(this.props.shelf)
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} 
                       toggle={this.toggle}>

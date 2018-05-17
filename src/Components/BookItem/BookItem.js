@@ -11,6 +11,7 @@ const BookItem = (props) =>
         <img className="card-img-top book-image" 
              src={props.image} 
              alt={`the book ${props.title} by ${props.authors && props.authors.toString().replace(/,/g, ', ')}`} />
+        {console.log(props.shelf)}
         <div className="card-body">
             <h5 className="card-title book-title">{props.title}</h5>
             <h5 className="card-title by-line by-line">{`By ${props.authors && props.authors.toString().replace(/,/g, ', ')}`}</h5>
