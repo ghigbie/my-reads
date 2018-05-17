@@ -8,7 +8,6 @@ class DropdownButton extends Component{
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.isActive = this.isActive.bind(this);
     
     this.state = {
       dropdownOpen: false
@@ -26,13 +25,12 @@ class DropdownButton extends Component{
     });
   }
   
-  isActive = (shelfSelection) => this.props.shelf === shelfSelection ? true : false;
-
   static propTypes = {
       sectionTitles: PropTypes.array.isRequired
   }
 
   render() {
+    console.log(this.props.shelf)
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} 
                       toggle={this.toggle}>
@@ -46,10 +44,12 @@ class DropdownButton extends Component{
             (<DropdownItem key={index}
                           value={`${this.props.id},${sectionTitle.shelfCategory},${this.props.isSearch}`}
                           onClick={this.props.changeShelf}
-                          active={this.isActive(sectionTitle.shelfCategory)}>
+                          active={sectionTitle.shelfCategory === this.props.shelf}>
                           {sectionTitle.heading}</DropdownItem>))}
           <DropdownItem value={`${this.props.id},none,${this.props.isSearch}`}
-                        onClick={this.props.changeShelf}>None</DropdownItem>
+                        onClick={this.props.changeShelf}
+                        active={!this.props.shelf}>
+                        None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
     );
