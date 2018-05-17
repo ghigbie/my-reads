@@ -44,7 +44,7 @@ class DropdownButton extends Component{
           <DropdownItem header>Move to...</DropdownItem>
           {this.props.sectionTitles.map((sectionTitle, index) => 
             (<DropdownItem key={index}
-                          value={`${this.props.id},${sectionTitle.shelfCategory}`}
+                          value={`${this.props.id},${sectionTitle.shelfCategory},${this.props.isSearch}`}
                           onClick={this.props.changeShelf}
                           active={this.isActive(sectionTitle.shelfCategory)}>
                           {sectionTitle.heading}</DropdownItem>))}

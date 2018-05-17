@@ -17,6 +17,7 @@ const BookItem = (props) =>
             <p className="card-text book-description">{`${props.description && props.description.substring(0, 188)}...`}</p>
             <div className="btn-bottom-right">
                 <DropdownButton sectionTitles={props.sectionTitles}
+                                isSearch={props.isSearch}
                                 id={props.id}
                                 shelf={props.shelf}
                                 changeShelf={props.changeShelf}/>
