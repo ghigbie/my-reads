@@ -36,17 +36,15 @@ class MyReadsApp extends Component {
     const targetID = selectedBook[0]; //This is the value of the ID, which was on the first item on the array
     const targetShelf = selectedBook[1]; //This is the shelf that the book should move to, which was on the second element of the array
     let isSearch = selectedBook[2];//This determines if the book was from the searched books
-    console.log("ISSEARCH", isSearch);
+    console.log("ISSEARCH", typeof(isSearch));
     let newBooksArray = this.state.books;
-    let targetBook
-    if(isSearch === true){
+    let targetBook;
+    if(isSearch === 'true'){
       console.log("search running");
-       if(targetShelf === 'none'){
-         this.setState((prevState) => ({books: prevState.searchedBooks.filter((book) => book.id !== targetID)}));
-      }
-      targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0];
-      targetBook['shelf'] = targetShelf;
-      //this.setState((prevState) => ({books: prevState.books.concat(targetBook)}));
+      targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0]; //this identif
+      targetBook['shelf'] = targetShelf;//this adds the shelf property to book object that does not have a shelf property
+      this.setState((prevState) => ({searchedBooks: prevState.searchedBooks.filter((book) => book.id !== targetID)}));
+      this.setState((prevState) => ({books: prevState.books.concat(targetBook)})); //this adds the searched book to the books array
       console.log(targetBook);
     }else{
       console.log("not search running");
@@ -62,7 +60,7 @@ class MyReadsApp extends Component {
     console.log("Target Book Done", targetBook);
     BookAPI.update(targetBook, targetShelf) //This updates the data base
       .then((response) => {});
-    
+  }
     
     //this.setState((prevState) => ({books: newBooksArray}))
     
@@ -93,7 +91,7 @@ class MyReadsApp extends Component {
     // this.setState(() => ({ books: newBooksArray })); //This sets the state of the books item in state.
     // BookAPI.update(targetBook, targetShelf) //This updates the data base
     //   .then((response) => {});
-  }
+  //}
   
   handleSearchBooks(query){
     const queryAPI = query.trim();
