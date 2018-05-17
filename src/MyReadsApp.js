@@ -34,8 +34,8 @@ class MyReadsApp extends Component {
     const selectedBook = e.currentTarget.value.split(','); //This gets the object an turns it into an array
     const targetID = selectedBook[0]; //This is the value of the ID, which was on the first item on the array
     const targetShelf = selectedBook[1]; //This is the shelf that the book should move to, which was on the second element of the array
-    let isSearch = selectedBook[2];//This determines if the book was from the searched books
-    let newBooksArray = this.state.books;//This is duplicate of the books array. It is used for further modification.
+    const isSearch = selectedBook[2];//This determines if the book was from the searched books. THIS VALUE IS A STRING
+    const newBooksArray = this.state.books;//This is duplicate of the books array. It is used for further modification.
     let targetBook;
     if(isSearch === 'true'){
       targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0]; //this identif
