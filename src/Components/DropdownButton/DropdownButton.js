@@ -48,7 +48,7 @@ class DropdownButton extends Component{
                           onClick={this.props.changeShelf}
                           active={this.isActive(sectionTitle.shelfCategory)}>
                           {sectionTitle.heading}</DropdownItem>))}
-          <DropdownItem value={`${this.props.id},none`}
+          <DropdownItem value={`${this.props.id},none,${this.props.isSearch}`}
                         onClick={this.props.changeShelf}>None</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
