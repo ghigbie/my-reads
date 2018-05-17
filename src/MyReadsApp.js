@@ -35,22 +35,24 @@ class MyReadsApp extends Component {
     const targetID = selectedBook[0]; //This is the value of the ID, which was on the first item on the array
     const targetShelf = selectedBook[1]; //This is the shelf that the book should move to, which was on the second element of the array
     const isSearch = selectedBook[2];//This determines if the book was from the searched books
+    console.log("ISSEARCH", isSearch);
+    const newBooksArray = this.state.books; //This is the original array. 
     let targetBook;
-    if(isSearch){
+    if(isSearch === true){
       targetBook = this.state.searchedBooks.filter((book) => book.id === targetID)[0]; //This is the array with the book that is be be changed
+      targetBook['shelf'] = targetShelf;  //This adds the shelf property to the object. It does not exist for searched books array
+      newBooksArray.concat(targetBook);
     }else{
       targetBook = this.state.books.filter((book) => book.id === targetID)[0]; //This is an array with the book that is to be changed
+      const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
+      newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
     }
     if(targetShelf === 'none'){//If none is selected, then this book should be removed'
       this.setState((prevState) => ({books: prevState.books.filter((book) => book.id !== targetID)})); //this removes the book by modifying the array
     }
-    const targetBookIndex = this.state.books.findIndex((book) => book.id === targetID); //This is the index of the book that is to changed
-    targetBook.shelf = targetShelf;
-    console.log(targetBook[0]);
-    const newBooksArray = this.state.books; //This is the original array. 
-    newBooksArray[targetBookIndex].shelf = targetShelf; //This changes the shelf of the one item in the array
+    console.log(targetBook);
     this.setState(() => ({ books: newBooksArray })); //This sets the state of the books item in state.
-    BookAPI.update(targetBook[0], targetShelf) //This updates the data base
+    BookAPI.update(targetBook, targetShelf) //This updates the data base
       .then((response) => {});
   }
   

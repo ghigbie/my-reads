@@ -18,6 +18,7 @@ const BookRow = (props) =>
                                             id={book.id}
                                             shelf={book.shelf}
                                             sectionTitles={props.sectionTitles}
+                                            isSearch={false}
                                             changeShelf={props.changeShelf}/>);
             })}
         </div>

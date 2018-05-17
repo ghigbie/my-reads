@@ -53,7 +53,7 @@ class SearchPage extends Component{
                                                             id={book.id !== undefined && book.id}
                                                             shelf={book.shelf}
                                                             sectionTitles={this.props.sectionTitles}
-                                                            isSearch={this.props.searchedBooks}
+                                                            isSearch={true}
                                                             changeShelf={this.props.changeShelf}/>))}
                 
                 </div>
