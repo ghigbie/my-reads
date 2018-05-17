@@ -19,10 +19,8 @@ class BookModal extends Component{
   }
   
   static propTypes = {
-    // title: PropTypes.string.isRequired,
-    // authors: PropTypes.array.isRequired,
-    // image: PropTypes.string.isRequired,
-    // description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired
   }
 
   render() {
