@@ -11,7 +11,6 @@ const BookItem = (props) =>
         <img className="card-img-top book-image" 
              src={props.image} 
              alt={`the book ${props.title} by ${props.authors && props.authors.toString().replace(/,/g, ', ')}`} />
-        {console.log(props.shelf)}
         <div className="card-body">
             <h5 className="card-title book-title">{props.title}</h5>
             <h5 className="card-title by-line by-line">{`By ${props.authors && props.authors.toString().replace(/,/g, ', ')}`}</h5>
@@ -37,13 +36,10 @@ const BookItem = (props) =>
 
 
 BookItem.propTypes = {
-    // title: PropTypes.string.isRequired,
-    // authors: PropTypes.array.isRequired,
-    // image: PropTypes.string.isRequired,
-    // description: PropTypes.string.isRequired,
-    // id: PropTypes.string.isRequired,
-    // shelf: PropTypes.string.isRequired,
-    // sectionTitles: PropTypes.array.isRequired
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,
+    id: PropTypes.string.isRequired,
+    sectionTitles: PropTypes.array.isRequired
 };
 
 export default BookItem;
