@@ -64,9 +64,40 @@ class MyReadsApp extends Component {
           if(response.error === "empty query"){
             this.setState(() => ({searchedBooks: []}));
           }else{
-            this.setState(() => ({searchedBooks: response}));
+            let filtered = [];
+            for(let i = 0; i < this.state.books.length; i++){
+              for(let j = 0; j < response.length; j++){
+                if(this.state.books[i].id === response[j].id){
+                  response.splice(j, 1);
+                  filtered.push(this.state.books[i]);
+                }
+              }
+            }
+            console.log('Filtered' , filtered);
+            let allBooks = response.concat(filtered);
+            console.log('BEFORE ', allBooks);
+            console.log(allBooks.length);
+            for(let k = 0; k < allBooks.length; k++){
+              if(allBooks[k].id === allBooks[allBooks.length-1-k].id
+                 && allBooks[k].title === allBooks[allBooks.length-1-k].title
+                 && !allBooks[k].hasOwnProperty('shelf')
+                 ){
+                allBooks.splice(k, 1);
+              }
+            }
+            // for(let i = 0; i < allBooks.length; i++){
+            //   if(allBooks[i].id === allBooks[allBooks.length-(i+1)].id && allBooks[i].hasOwnProperty('shelf')){
+            //     console.log('ALLBOOKS[i}', allBooks[i]);
+            //     console.log('ALLBOOKS[Lenght -i]', allBooks[allBooks.length-(i+1)]);
+            //     allBooks.splice(allBooks.length-(i+1), 1);
+            //     console.log('splice called');
+            //   }
+            // }
+            console.log("ALL BOOKS AFTER", allBooks);
+            //allBooks.filter((book, index, arr) => arr.indexOf(book.id) === index);
+            this.setState(() => ({searchedBooks: allBooks}));
           }
-          })
+        })
         .catch((err) => {
             console.log('THIS IS THE ERROR', err);
             this.setState(() => ({searchedBooks: []}));
@@ -75,6 +106,7 @@ class MyReadsApp extends Component {
       this.setState(() => ({searchedBooks: []}));
     }
   }
+  
   
   
   render() {
