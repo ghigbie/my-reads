@@ -33,21 +33,8 @@ class SearchPage extends Component{
     
     clearQuery = () => this.updateQuery('');
     
-    filterSearchedBooks = () => {
-       let returnArray = [];
-       for(let i = 0; i < this.props.searchedBooks.length; i++){
-            for(let j = 0; j < this.props.books.length; j++){
-                if(this.props.searchedBooks[i].id === this.props.books[j].id){
-                    returnArray.concat(this.props.books[j]);
-                }
-            }
-       }
-       console.log("repalced array Search", returnArray);
-       return this.props.searchedBooks.concat(returnArray);
-    }
-
     render(){
-        const { books, searchedBooks } = this.props;
+        const { searchedBooks } = this.props;
         return(
             <div className="books-container">
                 <h5 className="search-instructions">Search by Title or &nbsp;
