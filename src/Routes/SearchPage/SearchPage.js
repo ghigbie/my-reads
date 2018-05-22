@@ -9,7 +9,6 @@ class SearchPage extends Component{
         super(props);
         this.updateQuery = this.updateQuery.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
-        this.filterSearchedBooks = this.filterSearchedBooks.bind(this);
         this.state = {
             query: ''
         };
