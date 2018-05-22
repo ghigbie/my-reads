@@ -59,9 +59,18 @@ class MyReadsApp extends Component {
     const queryAPI = query.trim();
     if(queryAPI){
       BookAPI.search(queryAPI)
+        
         .then((response) => {
+          if(response.error === "empty query"){
+            this.setState(() => ({searchedBooks: []}));
+          }else{
             this.setState(() => ({searchedBooks: response}));
-          });
+          }
+          })
+        .catch((err) => {
+            console.log('THIS IS THE ERROR', err);
+            this.setState(() => ({searchedBooks: []}));
+        });
     }else{
       this.setState(() => ({searchedBooks: []}));
     }
