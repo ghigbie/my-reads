@@ -64,37 +64,16 @@ class MyReadsApp extends Component {
           if(response.error === "empty query"){
             this.setState(() => ({searchedBooks: []}));
           }else{
-            let filtered = [];
-            for(let i = 0; i < this.state.books.length; i++){
-              for(let j = 0; j < response.length; j++){
-                if(this.state.books[i].id === response[j].id){
-                  response.splice(j, 1);
-                  filtered.push(this.state.books[i]);
+            let filtered = []; //creates an empty array 
+            for(let i = 0; i < this.state.books.length; i++){ //loops through books
+              for(let j = 0; j < response.length; j++){ //compares values of response with books
+                if(this.state.books[i].id === response[j].id){ //compares the id's to the books
+                  response.splice(j, 1); //removes the matchign value in the respponse
+                  filtered.push(this.state.books[i]); //this adds vales to the formerly empty array
                 }
               }
             }
-            console.log('Filtered' , filtered);
-            let allBooks = response.concat(filtered);
-            console.log('BEFORE ', allBooks);
-            console.log(allBooks.length);
-            for(let k = 0; k < allBooks.length; k++){
-              if(allBooks[k].id === allBooks[allBooks.length-1-k].id
-                 && allBooks[k].title === allBooks[allBooks.length-1-k].title
-                 && !allBooks[k].hasOwnProperty('shelf')
-                 ){
-                allBooks.splice(k, 1);
-              }
-            }
-            // for(let i = 0; i < allBooks.length; i++){
-            //   if(allBooks[i].id === allBooks[allBooks.length-(i+1)].id && allBooks[i].hasOwnProperty('shelf')){
-            //     console.log('ALLBOOKS[i}', allBooks[i]);
-            //     console.log('ALLBOOKS[Lenght -i]', allBooks[allBooks.length-(i+1)]);
-            //     allBooks.splice(allBooks.length-(i+1), 1);
-            //     console.log('splice called');
-            //   }
-            // }
-            console.log("ALL BOOKS AFTER", allBooks);
-            //allBooks.filter((book, index, arr) => arr.indexOf(book.id) === index);
+            let allBooks = response.concat(filtered);//This creates a new array, which is the response and the filtered array
             this.setState(() => ({searchedBooks: allBooks}));
           }
         })
