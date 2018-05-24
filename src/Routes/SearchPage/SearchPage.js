@@ -41,7 +41,7 @@ class SearchPage extends Component{
                             className="btn btn-outline-primary">Clear Search</button>
                 </h5>
                 <form className="search-navigation">
-                    <Link className="close-search" href="/">{true}</Link>
+                    <Link className="close-search" to="/">{true}</Link>
                     <input type="text" 
                            name="search"
                            className="form-control search-books-bar"
