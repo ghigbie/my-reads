@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './SearchPage.css';
 
@@ -40,7 +41,7 @@ class SearchPage extends Component{
                             className="btn btn-outline-primary">Clear Search</button>
                 </h5>
                 <form className="search-navigation">
-                    <a className="close-search" href="/">{true}</a>
+                    <Link className="close-search" href="/">{true}</Link>
                     <input type="text" 
                            name="search"
                            className="form-control search-books-bar"
