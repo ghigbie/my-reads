@@ -28,7 +28,6 @@ class BookModal extends Component{
     return (
       <div>
         <Button className="btn btn-outline-primary" 
-                
                 onClick={this.toggle}>More Information</Button>
         <Modal isOpen={this.state.modal} 
                toggle={this.toggle} 
