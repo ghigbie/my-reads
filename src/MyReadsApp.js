@@ -64,6 +64,7 @@ class MyReadsApp extends Component {
           if(response.error === "empty query"){
             this.setState(() => ({searchedBooks: []}));
           }else{
+            //response.filter((book) => book.id.find(id => book.id))
             let filtered = []; //creates an empty array 
             for(let i = 0; i < this.state.books.length; i++){ //loops through books
               for(let j = 0; j < response.length; j++){ //compares values of response with books
