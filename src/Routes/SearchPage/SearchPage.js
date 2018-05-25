@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types';
 import './SearchPage.css';
 
@@ -42,12 +43,14 @@ class SearchPage extends Component{
                 </h5>
                 <form className="search-navigation">
                     <Link className="close-search" to="/">{true}</Link>
-                    <input type="text" 
-                           name="search"
-                           className="form-control search-books-bar"
-                           placeholder="Search Books"
-                           value={this.state.query}
-                           onChange={(event) => this.updateQuery(event.target.value)}/>
+                    <DebounceInput type="text" 
+                                   name="search"
+                                   className="form-control search-books-bar"
+                                   placeholder="Search Books"
+                                   value={this.state.query}
+                                   minLength={2}
+                                   debounceTimeout={300}
+                                   onChange={(event) => this.updateQuery(event.target.value)}/>
                 </form>
 
                 
